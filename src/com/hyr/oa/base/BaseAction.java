@@ -6,64 +6,41 @@ import javax.annotation.Resource;
 
 import com.hyr.oa.service.DepartmentService;
 import com.hyr.oa.service.RoleService;
-import com.hyr.oa.util.AppException;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
-@SuppressWarnings("unchecked")
 public class BaseAction<T> extends ActionSupport implements ModelDriven<T>
 {
-	private static final long serialVersionUID = 1830067021806381887L;
 
-	// ===================== 注入Service对象 ===================== //
-	protected DepartmentService departmentService; // 部门Service注入
-	protected RoleService roleService; // 岗位Service注入
+	// ===================== 声明Service ====================
+	@Resource
+	protected RoleService roleService;
+	@Resource
+	protected DepartmentService departmentService;
 
-	// ===================== 对ModelDriven的支持 ===================== //
-	protected T model; // 接收数据的Model对象
+	// ===================== 对ModelDriven的支持 ====================
 
-	public T getModel()
+	protected T model;
+
+	public BaseAction()
 	{
-		// TODO Auto-generated method stub
-		return model;
-	} 
-
-	public BaseAction() throws AppException
-	{
-		// 通过反射得到T的真实类型
-		ParameterizedType pt = (ParameterizedType) this.getClass().getGenericSuperclass();
-		Class<T> clazz = (Class<T>) pt.getActualTypeArguments()[0];
-
+		System.out.println("----------> BaseAction.BaseAction()");
 		try
 		{
+			// 通过反射获取T的真是类型
+			ParameterizedType pt = (ParameterizedType) this.getClass().getGenericSuperclass();
+			Class<T> clazz = (Class<T>) pt.getActualTypeArguments()[0];
+			// 通过反射创建model的实例
 			model = clazz.newInstance();
-		} catch (InstantiationException | IllegalAccessException e)
+		} catch (Exception e)
 		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new RuntimeException(e);
 		}
 	}
 
-	public RoleService getRoleService()
+	public T getModel()
 	{
-		return roleService;
-	}
-
-	@Resource(name = "roleServiceImpl")
-	public void setRoleService(RoleService roleService)
-	{
-		this.roleService = roleService;
-	}
-
-	public DepartmentService getDepartmentService()
-	{
-		return departmentService;
-	}
-
-	@Resource(name = "departmentServiceImpl")
-	public void setDepartmentService(DepartmentService departmentService)
-	{
-		this.departmentService = departmentService;
+		return model;
 	}
 
 }

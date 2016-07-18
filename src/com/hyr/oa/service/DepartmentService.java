@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import com.hyr.oa.base.DaoSupport;
 import com.hyr.oa.model.Department;
 import com.hyr.oa.util.AppException;
 
@@ -12,18 +13,8 @@ import com.hyr.oa.util.AppException;
  * @category 部门Service接口
  */
 @Transactional
-public interface DepartmentService
+public interface DepartmentService extends DaoSupport<Department> 
 {
-
-	List<Department> findAll() throws AppException;
-
-	void save(Department departmentModel) throws AppException;
-
-	void delete(Long id) throws AppException;
-
-	Department getById(Long id) throws AppException;
-
-	void update(Department department) throws AppException;
 
 	/**
 	 * 找到所有的顶级部门
