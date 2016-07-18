@@ -2,9 +2,16 @@ package com.hyr.oa.service;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import com.hyr.oa.model.Department;
 import com.hyr.oa.util.AppException;
 
+/**
+ * @author Administrator
+ * @category 部门Service接口
+ */
+@Transactional
 public interface DepartmentService
 {
 
