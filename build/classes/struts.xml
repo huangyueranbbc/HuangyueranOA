@@ -31,6 +31,14 @@
 			</result>
 		</action>
 
+		<action name="userAction_*" class="com.hyr.oa.view.action.UserAction"
+			method="{1}">
+			<result name="list">/WEB-INF/jsp/userAction/list.jsp</result>
+			<result name="editUI">/WEB-INF/jsp/userAction/editUI.jsp</result>
+			<result name="addUI">/WEB-INF/jsp/userAction/addUI.jsp</result>
+			<result name="toList" type="redirectAction">userAction_list</result>
+		</action>
+
 	</package>
 
 </struts>

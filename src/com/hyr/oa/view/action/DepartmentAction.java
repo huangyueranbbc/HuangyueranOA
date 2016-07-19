@@ -137,11 +137,6 @@ public class DepartmentAction extends BaseAction<Department>
 		return "toList";
 	};
 
-	public Department getModel()
-	{
-		return model;
-	}
-
 	public Long getParentId()
 	{
 		return parentId;

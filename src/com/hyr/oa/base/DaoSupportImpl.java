@@ -11,10 +11,13 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.hyr.oa.util.AppException;
+
 // 这个@Transactional注解对子类中的方法也有效！
 @Transactional
 @SuppressWarnings("unchecked")
-public abstract class DaoSupportImpl<T> implements DaoSupport<T> {
+public abstract class DaoSupportImpl<T> implements DaoSupport<T>
+{
 
 	@Resource
 	private SessionFactory sessionFactory;
@@ -24,7 +27,8 @@ public abstract class DaoSupportImpl<T> implements DaoSupport<T> {
 	// this.clazz = clazz;
 	// }
 
-	public DaoSupportImpl() {
+	public DaoSupportImpl()
+	{
 		// 通过反射获取T的真是类型
 		ParameterizedType pt = (ParameterizedType) this.getClass().getGenericSuperclass();
 		this.clazz = (Class<T>) pt.getActualTypeArguments()[0];
@@ -37,50 +41,63 @@ public abstract class DaoSupportImpl<T> implements DaoSupport<T> {
 	 * 
 	 * @return
 	 */
-	protected Session getSession() {
+	protected Session getSession() throws AppException
+	{
 		return sessionFactory.getCurrentSession();
 	}
 
-	public void save(T entity) {
+	public void save(T entity) throws AppException
+	{
 		getSession().save(entity);
 	}
 
-	public void update(T entity) {
+	public void update(T entity) throws AppException
+	{
 		getSession().update(entity);
 	}
 
-	public void delete(Long id) {
-		if (id == null) {
+	public void delete(Long id) throws AppException
+	{
+		if (id == null)
+		{
 			return;
 		}
 
 		Object entity = getById(id);
-		if (entity != null) {
+		if (entity != null)
+		{
 			getSession().delete(entity);
 		}
 	}
 
-	public T getById(Long id) {
-		if (id == null) {
+	public T getById(Long id) throws AppException
+	{
+		if (id == null)
+		{
 			return null;
-		} else {
+		} else
+		{
 			return (T) getSession().get(clazz, id);
 		}
 	}
 
-	public List<T> getByIds(Long[] ids) {
-		if(ids == null || ids.length == 0){
+	public List<T> getByIds(Long[] ids) throws AppException
+	{
+		if (ids == null || ids.length == 0)
+		{
 			return Collections.EMPTY_LIST;
 		}
-		
-		return getSession().createQuery(//
-				// 注意空格！
-				"FROM " + clazz.getSimpleName() + " WHERE id IN (:ids)")//
+
+		return getSession()
+				.createQuery(//
+						// 注意空格！
+						"FROM " + clazz.getSimpleName() + " WHERE id IN (:ids)")//
 				.setParameterList("ids", ids)// 注意一定要使用setParameterList()方法！
 				.list();
 	}
 
-	public List<T> findAll() {
+	public List<T> findAll() throws AppException
+	{
 		// 注意空格！
 		return getSession().createQuery("FROM " + clazz.getSimpleName()).list();
 	}

@@ -2,18 +2,13 @@ package com.hyr.oa.view.action;
 
 import java.util.List;
 
-import javax.annotation.Resource;
-
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import com.hyr.oa.base.BaseAction;
 import com.hyr.oa.model.Role;
-import com.hyr.oa.service.RoleService;
 import com.hyr.oa.util.AppException;
 import com.opensymphony.xwork2.ActionContext;
-import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.ModelDriven;
 
 /**
  * @author Administrator
@@ -121,11 +116,6 @@ public class RoleAction extends BaseAction<Role>
 		// 更新到数据库
 		roleService.update(role);
 		return "toList";
-	}
-
-	public Role getModel()
-	{
-		return model;
 	}
 
 }

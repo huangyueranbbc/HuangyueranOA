@@ -6,17 +6,23 @@ import javax.annotation.Resource;
 
 import com.hyr.oa.service.DepartmentService;
 import com.hyr.oa.service.RoleService;
+import com.hyr.oa.service.UserService;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
+@SuppressWarnings("unchecked")
 public class BaseAction<T> extends ActionSupport implements ModelDriven<T>
 {
 
+	private static final long serialVersionUID = -5197412010588767285L;
+
 	// ===================== 声明Service ====================
-	@Resource
+	@Resource(name = "roleServiceImpl")
 	protected RoleService roleService;
-	@Resource
+	@Resource(name = "departmentServiceImpl")
 	protected DepartmentService departmentService;
+	@Resource(name = "userServiceImpl")
+	protected UserService userService;
 
 	// ===================== 对ModelDriven的支持 ====================
 

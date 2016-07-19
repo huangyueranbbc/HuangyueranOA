@@ -24,7 +24,7 @@ public class DepartmentServiceImpl extends DaoSupportImpl<Department>implements 
 	 * @throws AppException
 	 * @throws DatabaseException
 	 */
-	public List<Department> findTopList()
+	public List<Department> findTopList() throws AppException
 	{
 		return getSession()
 				.createQuery(//
@@ -40,7 +40,7 @@ public class DepartmentServiceImpl extends DaoSupportImpl<Department>implements 
 	 * @throws AppException
 	 * @throws DatabaseException
 	 */
-	public List<Department> fintChildrenList(Long parentId)
+	public List<Department> fintChildrenList(Long parentId) throws AppException
 	{
 		return getSession()
 				.createQuery(//
