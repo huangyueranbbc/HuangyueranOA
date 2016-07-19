@@ -40,8 +40,8 @@
 						<td>${description}&nbsp;</td>
 						<td><s:a action="roleAction_delete?id=%{id}"
 								onclick="return confirm('确定要删除吗？')">删除</s:a> <s:a
-								action="roleAction_editUI?id=%{id}">修改</s:a> <a
-							href="setPrivilegeUI.html">设置权限</a></td>
+								action="roleAction_editUI?id=%{id}">修改</s:a> <s:a
+							action="roleAction_setPrivilegeUI?id=%{id}">设置权限</s:a></td>  
 					</tr>
 				</s:iterator>
 

@@ -14,11 +14,36 @@
 
 	<package name="default" namespace="/" extends="struts-default">
 
+		<interceptors>
+			<!-- 声明拦截器 -->
+			<interceptor name="checkPrivilege"
+				class="com.hyr.oa.Interceptor.CheckPrivilegeInterceptor"></interceptor>
+
+			<!-- 配置我们自己的拦截器栈 -->
+			<interceptor-stack name="myDefaultStack">
+				<interceptor-ref name="checkPrivilege"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+
+		<!-- 配置默认的拦截器栈 -->
+		<default-interceptor-ref name="myDefaultStack"></default-interceptor-ref>
+
+
+		<!-- 配置全局的Result -->
+		<global-results>
+			<result name="loginUI">/WEB-INF/jsp/loginoutAction/loginUI.jsp</result>
+			<result name="noPrivilegeUI">/noPrivilegeUI.jsp</result>
+		</global-results>
+
+
 		<action name="roleAction_*" class="com.hyr.oa.view.action.RoleAction"
 			method="{1}">
 			<result name="list">/WEB-INF/jsp/roleAction/list.jsp</result>
 			<result name="editUI">/WEB-INF/jsp/roleAction/editUI.jsp</result>
 			<result name="addUI">/WEB-INF/jsp/roleAction/addUI.jsp</result>
+			<result name="setPrivilegeUI">/WEB-INF/jsp/roleAction/setPrivilegeUI.jsp
+			</result>
 			<result name="toList" type="redirectAction">roleAction_list</result>
 		</action>
 
@@ -37,6 +62,18 @@
 			<result name="editUI">/WEB-INF/jsp/userAction/editUI.jsp</result>
 			<result name="addUI">/WEB-INF/jsp/userAction/addUI.jsp</result>
 			<result name="toList" type="redirectAction">userAction_list</result>
+		</action>
+
+		<action name="loginoutAction_*" class="com.hyr.oa.view.action.LoginoutAction"
+			method="{1}">
+			<result name="loginUI">/WEB-INF/jsp/loginoutAction/loginUI.jsp</result>
+			<result name="logout">/WEB-INF/jsp/loginoutAction/logout.jsp</result>
+			<result name="toHome" type="redirect">/index.jsp</result>
+		</action>
+
+		<!-- 首页 -->
+		<action name="homeAction_*" class="homeAction" method="{1}">
+			<result name="{1}">/WEB-INF/jsp/homeAction/{1}.jsp</result>
 		</action>
 
 	</package>

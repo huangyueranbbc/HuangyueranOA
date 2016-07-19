@@ -1,29 +1,24 @@
 A:link {
-	COLOR: #a9dcff;
-	TEXT-DECORATION: none
+	COLOR: #a9dcff; TEXT-DECORATION: none
 }
 
 A:visited {
-	COLOR: #a9dcff;
-	TEXT-DECORATION: none
+	COLOR: #a9dcff; TEXT-DECORATION: none
 }
 
 A:active {
-	COLOR: #a9dcff;
-	TEXT-DECORATION: none
+	COLOR: #a9dcff; TEXT-DECORATION: none
 }
 
 A:hover {
-	COLOR: #a9dcff;
-	TEXT-DECORATION: none;
+	COLOR: #a9dcff; TEXT-DECORATION: none;
 }
 
 #StatusBar {
 	width: 100%;
 	height: 19px;
 	border-top: 1px solid #ffffff;
-	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#3d7aa7,
-		endcolorstr=#4891c6, gradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#3d7aa7,endcolorstr=#4891c6,gradientType=0);
 	background-color: #4386B7;
 }
 
@@ -31,22 +26,22 @@ A:hover {
 	padding-left: 16px;
 	padding-top: 6px;
 	color: #a9dcff;
-	font-family: "ï¿½ï¿½ï¿½ï¿½";
+	font-family: "ËÎÌå";
 	font-size: 12px;
 	float: left;
 }
 
 .OnlineUser {
 	color: #ffffff;
-	font-family: "ï¿½ï¿½ï¿½ï¿½";
+	font-family: "ËÎÌå";
 	font-size: 12px;
-	font-weight: bold;
+	font-weight:bold;
 }
 
 .OnlineView {
 	padding-left: 16px;
 	color: #a9dcff;
-	font-family: "ï¿½ï¿½ï¿½ï¿½";
+	font-family: "ËÎÌå";
 	font-size: 12px;
 }
 
@@ -54,7 +49,7 @@ A:hover {
 	padding-left: 20px;
 	padding-top: 6px;
 	color: #a9dcff;
-	font-family: "ï¿½ï¿½ï¿½ï¿½";
+	font-family: "ËÎÌå";
 	font-size: 12px;
 	float: left;
 }
@@ -63,7 +58,7 @@ A:hover {
 	padding-right: 20px;
 	padding-left: 20px;
 	color: #a9dcff;
-	font-family: "ï¿½ï¿½ï¿½ï¿½";
+	font-family: "ËÎÌå";
 	font-size: 12px;
 }
 
@@ -71,7 +66,7 @@ A:hover {
 	padding-right: 20px;
 	padding-top: 6px;
 	color: #a9dcff;
-	font-family: "ï¿½ï¿½ï¿½ï¿½";
+	font-family: "ËÎÌå";
 	font-size: 12px;
 	float: right;
 }

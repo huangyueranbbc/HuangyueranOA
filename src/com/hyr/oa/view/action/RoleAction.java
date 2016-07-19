@@ -1,11 +1,13 @@
 package com.hyr.oa.view.action;
 
+import java.util.HashSet;
 import java.util.List;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import com.hyr.oa.base.BaseAction;
+import com.hyr.oa.model.Privilege;
 import com.hyr.oa.model.Role;
 import com.hyr.oa.util.AppException;
 import com.opensymphony.xwork2.ActionContext;
@@ -18,6 +20,8 @@ import com.opensymphony.xwork2.ActionContext;
 @Scope("prototype")
 public class RoleAction extends BaseAction<Role>
 {
+
+	private Long[] privilegeIds;
 
 	public RoleAction() throws AppException
 	{
@@ -116,6 +120,69 @@ public class RoleAction extends BaseAction<Role>
 		// 更新到数据库
 		roleService.update(role);
 		return "toList";
+	}
+
+	/**
+	 * 设置权限页面
+	 * 
+	 * @return
+	 * @throws AppException
+	 */
+	public String setPrivilegeUI() throws AppException
+	{
+		// 准备数据
+		List<Privilege> privilegeTopList=privilegeService.findTopList();
+		ActionContext.getContext().put("privilegeTopList", privilegeTopList);
+		
+		Role role = roleService.getById(model.getId());
+		ActionContext.getContext().getValueStack().push(role); 
+
+		// >> 准备回显的权限数据
+		privilegeIds = new Long[role.getPrivileges().size()];
+		int index = 0;
+		for (Privilege privilege : role.getPrivileges())
+		{
+			privilegeIds[index++] = privilege.getId();
+		}
+
+		return "setPrivilegeUI";
+	}
+
+	/**
+	 * 设置权限
+	 * 
+	 * @return
+	 * @throws AppException
+	 */
+	public String setPrivilege() throws AppException
+	{
+		// 从数据库取出原对象
+		Role role = roleService.getById(model.getId());
+
+		// 设置要修改的属性
+		List<Privilege> privilegeList = privilegeService.getByIds(privilegeIds);
+		role.setPrivileges(new HashSet<>(privilegeList));
+
+		// 更新到数据库
+		roleService.update(role);
+		return "toList";
+	}
+
+	/**
+	 * @return the privilegeIds
+	 */
+	public Long[] getPrivilegeIds()
+	{
+		return privilegeIds;
+	}
+
+	/**
+	 * @param privilegeIds
+	 *            the privilegeIds to set
+	 */
+	public void setPrivilegeIds(Long[] privilegeIds)
+	{
+		this.privilegeIds = privilegeIds;
 	}
 
 }

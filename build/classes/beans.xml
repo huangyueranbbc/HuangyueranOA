@@ -16,6 +16,7 @@
 	<tx:annotation-driven transaction-manager="txManager" />
 	<!-- 开启sprin自动扫描包的组件 -->
 	<context:component-scan base-package="com.hyr"></context:component-scan>
+	<context:component-scan base-package="com.hyr.oa.install"></context:component-scan>
 	<aop:config proxy-target-class="true"></aop:config>
 
 	<!-- 加载外部的properties配置文件 -->
@@ -69,5 +70,7 @@
 	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate4.HibernateTemplate">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
+
+	<bean id="installer" class="cn.hyr.oa.install.Installer"></bean>
 
 </beans>

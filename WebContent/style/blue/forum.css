@@ -6,8 +6,7 @@
 .ForumPageTableTitleLeft {
 	border-left: 1px solid #f7f7f7;
 	border-top: 1px solid #f7f7f7;
-	FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,
-		startColorStr=#cfe6fb, endColorStr=#acd1f4);
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#cfe6fb,endColorStr=#acd1f4);
 	height: 23px;
 	font-size: 13px;
 	font-weight: bold;
@@ -17,8 +16,7 @@
 .ForumPageTableTitleRight {
 	border-right: 1px solid #f7f7f7;
 	border-top: 1px solid #f7f7f7;
-	FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,
-		startColorStr=#cfe6fb, endColorStr=#acd1f4);
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#cfe6fb,endColorStr=#acd1f4);
 	height: 23px;
 	font-size: 13px;
 	font-weight: bold;
@@ -31,8 +29,7 @@
 
 .ForumPageTableTitle {
 	border-top: 1px solid #f7f7f7;
-	FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,
-		startColorStr=#cfe6fb, endColorStr=#acd1f4);
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#cfe6fb,endColorStr=#acd1f4);
 	height: 23px;
 	font-size: 13px;
 	font-weight: bold;
@@ -76,7 +73,7 @@
 }
 
 .ForumPageManager {
-	float: right;
+	float: right; 
 	font-weight: normal;
 	color: #004a7d;
 }
@@ -127,20 +124,18 @@ A.Default {
 .MenuPoint {
 	color: #ff9600;
 }
-
 .VotingArea {
 	background-color: #FFFFFF;
-	border-top: 1px solid #E0E0E0;
-	border-right: 1px solid #E0E0E0;
-	border-left: 1px solid #E0E0E0;
+	border-top:1px solid #E0E0E0;
+	border-right:1px solid #E0E0E0;
+	border-left:1px solid #E0E0E0;
 	margin: 0px;
 }
+.VotingArea td{
+	border-bottom:1px solid #E0E0E0;
+	height:25px;
 
-.VotingArea td {
-	border-bottom: 1px solid #E0E0E0;
-	height: 25px;
 }
-
 .ListArea {
 	background-color: #FFFFFF;
 	width: 100%;
@@ -240,11 +235,10 @@ A.Default {
 	background-color: #f3f8fc;
 	height: 100%;
 	width: 100%;
-	padding: 3px;
+	padding:3px;
 	text-align: center;
 	line-height: 30px;
 }
-
 .InputTitle2 {
 	text-align: center;
 	font-weight: bold;

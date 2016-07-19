@@ -21,7 +21,11 @@
 		<param-value>classpath:beans.xml</param-value>
 	</context-param>
 
-
+	<!-- 配置自己的用于做初始化工作的监听器，一定要配置到Spring的ContextLoaderListener的后面，因为要用到Spring的容器对象 -->
+	<listener>
+		<listener-class>com.hyr.oa.util.OAInitListener</listener-class>
+	</listener>
+ 
 	<filter>
 		<filter-name>openSessionInView</filter-name>
 		<filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter</filter-class>

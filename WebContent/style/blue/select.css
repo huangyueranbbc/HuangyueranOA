@@ -1,8 +1,8 @@
 .TableBorder {
-	BORDER-TOP: #DEDEDE 1px solid;
-	BORDER-BOTTOM: #DEDEDE 1px solid;
-	BORDER-LEFT: #DEDEDE 1px solid;
-	BORDER-RIGHT: #DEDEDE 1px solid;
+	BORDER-TOP: #DEDEDE 1px solid; 
+	BORDER-BOTTOM: #DEDEDE 1px solid; 
+	BORDER-LEFT: #DEDEDE 1px solid; 
+	BORDER-RIGHT: #DEDEDE 1px solid; 
 }
 
 .HeadLeft {
@@ -47,3 +47,4 @@
 	padding: 3px;
 	float: left;
 }
+
