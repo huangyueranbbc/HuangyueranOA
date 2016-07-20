@@ -5,6 +5,7 @@ import java.lang.reflect.ParameterizedType;
 import javax.annotation.Resource;
 
 import com.hyr.oa.service.DepartmentService;
+import com.hyr.oa.service.ForumService;
 import com.hyr.oa.service.PrivilegeService;
 import com.hyr.oa.service.RoleService;
 import com.hyr.oa.service.UserService;
@@ -26,6 +27,8 @@ public class BaseAction<T> extends ActionSupport implements ModelDriven<T>
 	protected UserService userService;
 	@Resource(name = "privilegeServiceImpl")
 	protected PrivilegeService privilegeService;
+	@Resource(name = "forumServiceImpl")
+	protected ForumService forumService;
 
 	// ===================== 对ModelDriven的支持 ====================
 

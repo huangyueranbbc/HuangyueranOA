@@ -36,6 +36,7 @@ public class AppException extends Exception
 	public String getDetailMessage()
 	{
 		String detailMessage = "Detail Message:" + exceptionCode + ":" + message;// 详细的异常信息
+		System.out.println(detailMessage); 
 		return detailMessage;
 	}
 
