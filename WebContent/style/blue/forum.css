@@ -183,7 +183,7 @@ A.Default {
 
 .Content {
 	width: 98%;
-	height: 100px;
+	height: 100%; 
 	padding: 10px;
 	text-align: justify;
 }

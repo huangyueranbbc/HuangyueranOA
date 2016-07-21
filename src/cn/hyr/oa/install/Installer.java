@@ -22,7 +22,8 @@ import com.hyr.oa.model.User;
 @Component 
 public class Installer
 {
-
+	// UPDATE hyr_oa_reply SET deleted = 0;
+	
 	@Resource
 	private SessionFactory sessionFactory;
 

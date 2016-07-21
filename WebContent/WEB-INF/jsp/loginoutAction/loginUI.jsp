@@ -30,7 +30,7 @@
                         </td>
                         <td>
                         	<%-- 用户名 --%>
-                        	<s:textfield size="20" cssClass="TextField" name="loginName" />
+                        	<s:textfield size="20" cssClass="TextField required" name="loginName" />
                         </td>
                         <td rowspan="2" style="padding-left:10px;"><input type="image" src="<%=basePath%>style/blue/images/login/userLogin_button.gif"/></td>
                     </tr>
@@ -38,7 +38,7 @@
                         <td class="Subject"><img border="0" src="<%=basePath%>style/blue/images/login/password.gif" /></td>
                         <td>
 							<%-- 密码，不需要回显 --%>                        
-                        	<s:password size="20" cssClass="TextField" showPassword="false" name="password" />
+                        	<s:password size="20" cssClass="TextField required" showPassword="false" name="password" />
                         </td>
                     </tr>
                 </table>

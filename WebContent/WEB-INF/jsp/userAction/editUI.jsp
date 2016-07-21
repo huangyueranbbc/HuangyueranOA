@@ -45,29 +45,29 @@
 						</tr>
 						<tr>
 							<td>登录名</td>
-							<td><s:textfield name="loginName" cssClass="InputStyle" />
+							<td><s:textfield name="loginName" cssClass="InputStyle required" />
 								* （登录名要唯一）</td>
 						</tr>
 						<tr>
 							<td>姓名</td>
-							<td><s:textfield name="name" cssClass="InputStyle" /> *</td>
+							<td><s:textfield name="name" cssClass="InputStyle required" /> *</td>
 						</tr>
 						<tr>
 							<td>性别</td>
-							<td><s:radio list="%{#{'男':'男','女':'女'}}" name="gender"></s:radio>
+							<td><s:radio list="%{#{'男':'男','女':'女'}}" name="gender required"></s:radio>
 							</td>
 						</tr>
 						<tr>
 							<td>联系电话</td>
-							<td><s:textfield name="phoneNumber" cssClass="InputStyle" /></td>
+							<td><s:textfield name="phoneNumber" cssClass="InputStyle required" /></td>
 						</tr>
 						<tr>
 							<td>E-mail</td>
-							<td><s:textfield name="email" cssClass="InputStyle" /></td>
+							<td><s:textfield name="email" cssClass="InputStyle required email" /></td>
 						</tr>
 						<tr>
 							<td>备注</td>
-							<td><s:textarea name="description" cssClass="TextareaStyle"></s:textarea></td>
+							<td><s:textarea name="description" cssClass="TextareaStyle required"></s:textarea></td>
 						</tr>
 					</table>
 				</div>

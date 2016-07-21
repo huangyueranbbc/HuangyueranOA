@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -107,7 +108,7 @@ public class Topic extends Article
 		this.forum = forum;
 	}
 
-	@OneToMany(mappedBy = "topic")
+	@OneToMany(mappedBy = "topic")  
 	public Set<Reply> getReplies()
 	{
 		return replies;

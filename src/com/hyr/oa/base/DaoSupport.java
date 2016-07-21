@@ -2,7 +2,9 @@ package com.hyr.oa.base;
 
 import java.util.List;
 
+import com.hyr.oa.model.PageBean;
 import com.hyr.oa.util.AppException;
+import com.hyr.oa.util.QueryHelper;
 
 public interface DaoSupport<T>
 {
@@ -50,4 +52,25 @@ public interface DaoSupport<T>
 	 * @return
 	 */
 	List<T> findAll() throws AppException;
+
+	/**
+	 * 公共的查询分页信息的方法
+	 * 
+	 * @param hql
+	 *            查询数据列表的HQL语句，在方法内部会自动生产查询总数量的HQL语句
+	 * @param objects
+	 * @return
+	 * @throws AppException
+	 */
+	PageBean getPageBean(int pageNum, String hql, Object[] objects) throws AppException;
+
+	/**
+	 * 公共的查询分页信息的方法（最终版）
+	 * 
+	 * @param pageNum
+	 * @param queryHelper
+	 *            查询语句 + 参数列表
+	 * @return
+	 */
+	PageBean getPageBean(int pageNum, QueryHelper queryHelper)throws AppException;
 }
