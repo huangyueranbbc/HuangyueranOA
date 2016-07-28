@@ -9,14 +9,14 @@
 	<div id="Menu">
 		<ul id="MenuUl">
 			<%-- 一级菜单 --%>
-			<s:iterator value="#application.topPrivilegeList">  
+			<s:iterator value="#application.topPrivilegeList">
 				<s:if test=" #session.user.hasPrivilegeByName(name) ">
 					<li class="level1">
 						<div onClick=" $(this).next().toggle() " class="level1Style">
 							<img src="style/images/MenuIcon/${id}.gif" class="Icon" />
-							${name} 
+							${name}
 						</div>
-						<ul class="MenuLevel2"> 
+						<ul class="MenuLevel2">
 							<%-- 二级菜单 --%>
 							<s:iterator value="children">
 								<s:if test=" #session.user.hasPrivilegeByName(name) ">
@@ -33,7 +33,7 @@
 						</ul>
 					</li>
 				</s:if>
-			</s:iterator> 
+			</s:iterator>
 			<s:debug></s:debug>
 		</ul>
 

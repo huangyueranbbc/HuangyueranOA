@@ -97,13 +97,31 @@
 		<action name="topicAction_*" class="topicAction" method="{1}">
 			<result name="show">/WEB-INF/jsp/topicAction/show.jsp</result>
 			<result name="addUI">/WEB-INF/jsp/topicAction/addUI.jsp</result>
-			<result name="toShow" type="redirectAction">topicAction_show?id=${#topicId}</result>
+			<result name="toShow" type="redirectAction">topicAction_show?id=${#topicId}
+			</result>
 		</action>
 
 		<!-- 论坛：回复相关功能 -->
 		<action name="replyAction_*" class="replyAction" method="{1}">
 			<result name="addUI">/WEB-INF/jsp/replyAction/addUI.jsp</result>
 			<result name="toTopicShow" type="redirectAction">topicAction_show?id=${topicId}
+			</result>
+		</action>
+
+		<!-- 流程定义管理 -->
+		<action name="processDefinitionAction_*" class="processDefinitionAction"
+			method="{1}">
+			<result name="list">/WEB-INF/jsp/processDefinitionAction/list.jsp
+			</result>
+			<result name="addUI">/WEB-INF/jsp/processDefinitionAction/addUI.jsp
+			</result>
+			<result name="toList" type="redirectAction">processDefinitionAction_list
+			</result>
+
+			<!-- 下载功能 -->
+			<result type="stream" name="downloadProcessImage">
+				<param name="contentType">image/png</param>
+				<param name="inputName">inputStream</param>
 			</result>
 		</action>
 

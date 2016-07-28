@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-import com.hyr.oa.base.BaseAction;
+import com.hyr.oa.base.ModelDrivenBaseAction;
 import com.hyr.oa.model.Forum;
 import com.hyr.oa.model.PageBean;
 import com.hyr.oa.model.Reply;
@@ -16,7 +16,7 @@ import com.opensymphony.xwork2.ActionContext;
 
 @Controller
 @Scope("prototype")
-public class TopicAction extends BaseAction<Topic>
+public class TopicAction extends ModelDrivenBaseAction<Topic>
 {
 	private static final long serialVersionUID = 344773284573816989L;
 

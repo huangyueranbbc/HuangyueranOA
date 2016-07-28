@@ -60,7 +60,7 @@
 										<li><font color="#444444">┌ 主题：</font> <s:a
 												cssClass="ForumTitle"
 												action="topicAction_show?id=%{lastTopic.id}">${lastTopic.title}</s:a>
-										</li> 
+										</li>
 										<li><font color="#444444">├ 作者：</font>
 											${lastTopic.author.name}</li>
 										<li><font color="#444444">└ 时间：</font> <s:date

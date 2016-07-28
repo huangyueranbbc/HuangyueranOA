@@ -33,7 +33,7 @@
 						<font class="MenuPoint"> &gt; </font>
 						<s:a action="forumAction_list">论坛</s:a>
 						<font class="MenuPoint"> &gt; </font>
-						<s:a action="forumAction_show?id=%{#forum.id}"> ${forum.name } </s:a> 
+						<s:a action="forumAction_show?id=%{#forum.id}"> ${forum.name } </s:a>
 						<font class="MenuPoint"> &gt;&gt; </font> 发表新主题
 					</div>
 				</div>
@@ -65,7 +65,7 @@
 				</div>
 			</center>
 		</s:form>
-	</div> 
+	</div>
 
 	<div class="Description">
 		说明：<br />

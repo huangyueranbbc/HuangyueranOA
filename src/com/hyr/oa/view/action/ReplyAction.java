@@ -3,7 +3,7 @@ package com.hyr.oa.view.action;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-import com.hyr.oa.base.BaseAction;
+import com.hyr.oa.base.ModelDrivenBaseAction;
 import com.hyr.oa.model.Reply;
 import com.hyr.oa.model.Topic;
 import com.hyr.oa.util.AppException;
@@ -11,7 +11,7 @@ import com.opensymphony.xwork2.ActionContext;
 
 @Controller
 @Scope("prototype")
-public class ReplyAction extends BaseAction<Reply>
+public class ReplyAction extends ModelDrivenBaseAction<Reply>
 {
 	private Long topicId;
 

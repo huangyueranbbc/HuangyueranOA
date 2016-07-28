@@ -45,29 +45,33 @@
 						</tr>
 						<tr>
 							<td>登录名</td>
-							<td><s:textfield name="loginName" cssClass="InputStyle required" />
-								* （登录名要唯一）</td>
+							<td><s:textfield name="loginName"
+									cssClass="InputStyle required" /> * （登录名要唯一）</td>
 						</tr>
 						<tr>
 							<td>姓名</td>
-							<td><s:textfield name="name" cssClass="InputStyle required" /> *</td>
+							<td><s:textfield name="name" cssClass="InputStyle required" />
+								*</td>
 						</tr>
 						<tr>
 							<td>性别</td>
-							<td><s:radio list="%{#{'男':'男','女':'女'}}" name="gender required"></s:radio>
-							</td>
+							<td><s:radio list="%{#{'男':'男','女':'女'}}"
+									name="gender required"></s:radio></td>
 						</tr>
 						<tr>
 							<td>联系电话</td>
-							<td><s:textfield name="phoneNumber" cssClass="InputStyle required" /></td>
+							<td><s:textfield name="phoneNumber"
+									cssClass="InputStyle required" /></td>
 						</tr>
 						<tr>
 							<td>E-mail</td>
-							<td><s:textfield name="email" cssClass="InputStyle required email" /></td>
+							<td><s:textfield name="email"
+									cssClass="InputStyle required email" /></td>
 						</tr>
 						<tr>
 							<td>备注</td>
-							<td><s:textarea name="description" cssClass="TextareaStyle required"></s:textarea></td>
+							<td><s:textarea name="description"
+									cssClass="TextareaStyle required"></s:textarea></td>
 						</tr>
 					</table>
 				</div>
@@ -90,7 +94,7 @@
 							<td><s:select name="roleIds" cssClass="SelectStyle"
 									multiple="true" list="roleList" listKey="id" listValue="name">
 								</s:select> 按住Ctrl键可以多选或取消选择</td>
-						</tr> 
+						</tr>
 					</table>
 				</div>
 			</div>

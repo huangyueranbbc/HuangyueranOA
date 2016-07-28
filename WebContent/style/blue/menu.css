@@ -1,7 +1,7 @@
 body {
 	background: #d8edfc;
 	font-size: 12px;
-	font-family: "ËÎÌå";
+	font-family: "ï¿½ï¿½ï¿½ï¿½";
 	scrollbar-base-color: #dbecf8;
 	scrollbar-arrow-color: #2a8ed1;
 	scrollbar-track-color: #bdddf2;
@@ -14,31 +14,38 @@ body {
 }
 
 A:link {
-	COLOR: #004779; TEXT-DECORATION: none
+	COLOR: #004779;
+	TEXT-DECORATION: none
 }
+
 A:visited {
-	COLOR: #004779; TEXT-DECORATION: none
+	COLOR: #004779;
+	TEXT-DECORATION: none
 }
+
 A:active {
-	COLOR: #004779; TEXT-DECORATION: none
+	COLOR: #004779;
+	TEXT-DECORATION: none
 }
+
 A:hover {
-	COLOR: #0000ff; TEXT-DECORATION: underLine;
+	COLOR: #0000ff;
+	TEXT-DECORATION: underLine;
 }
 
 img.Icon {
 	margin-bottom: -4px;
 }
 
-#MenuUl, ul.MenuLevel1{
-	list-style:none;
+#MenuUl, ul.MenuLevel1 {
+	list-style: none;
 	margin: 0px;
 	padding: 0px;
 	background: #d8ebf7;
 }
 
 ul.MenuLevel2 {
-	list-style:none;
+	list-style: none;
 	margin: 0px;
 	padding: 0px;
 	background: #d8ebf7;
@@ -123,4 +130,3 @@ ul.MenuLevel2 {
 	border-top: 1px solid #eff6fb;
 	cursor: hand;
 }
-

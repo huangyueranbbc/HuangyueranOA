@@ -5,13 +5,13 @@ import java.util.List;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-import com.hyr.oa.base.BaseAction;
+import com.hyr.oa.base.ModelDrivenBaseAction;
 import com.hyr.oa.model.Forum;
 import com.opensymphony.xwork2.ActionContext;
 
 @Controller
 @Scope("prototype")
-public class ForumManageAction extends BaseAction<Forum>
+public class ForumManageAction extends ModelDrivenBaseAction<Forum>
 {
 	private static final long serialVersionUID = -5493166245108101289L;
 

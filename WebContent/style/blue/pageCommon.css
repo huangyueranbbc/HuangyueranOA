@@ -1,25 +1,32 @@
 @charset "utf-8";
 /* CSS Document */
-
-img{
+img {
 	border: none;
 }
 
 A:link {
-	COLOR: #004779; TEXT-DECORATION: none
+	COLOR: #004779;
+	TEXT-DECORATION: none
 }
+
 A:visited {
-	COLOR: #004779; TEXT-DECORATION: none
+	COLOR: #004779;
+	TEXT-DECORATION: none
 }
+
 A:active {
-	COLOR: #004779; TEXT-DECORATION: none
+	COLOR: #004779;
+	TEXT-DECORATION: none
 }
+
 A:hover {
-	COLOR: #0000ff; TEXT-DECORATION: underLine;
+	COLOR: #0000ff;
+	TEXT-DECORATION: underLine;
 }
 
 A.OpenWinLink:hover {
-	COLOR: #004779; TEXT-DECORATION: none;
+	COLOR: #004779;
+	TEXT-DECORATION: none;
 }
 
 body {
@@ -44,7 +51,7 @@ td {
 	font-family: 宋体;
 }
 
-form table td{
+form table td {
 	padding-top: 5px;
 }
 
@@ -53,16 +60,23 @@ ul {
 }
 
 #Title_bar A:link {
-	COLOR: #004779; TEXT-DECORATION: none
+	COLOR: #004779;
+	TEXT-DECORATION: none
 }
+
 #Title_bar A:visited {
-	COLOR: #004779; TEXT-DECORATION: none
+	COLOR: #004779;
+	TEXT-DECORATION: none
 }
+
 #Title_bar A:active {
-	COLOR: #004779; TEXT-DECORATION: none
+	COLOR: #004779;
+	TEXT-DECORATION: none
 }
+
 #Title_bar A:hover {
-	COLOR: #004779; TEXT-DECORATION: none;
+	COLOR: #004779;
+	TEXT-DECORATION: none;
 }
 
 #Title_bar {
@@ -128,7 +142,7 @@ ul {
 	cursor: hand;
 }
 
-#Title_FuncBar{
+#Title_FuncBar {
 	width: 100%;
 	float: right;
 	text-align: right;
@@ -166,7 +180,7 @@ ul {
 	border-top: 2px solid #ffffff;
 }
 
-#MainArea form{
+#MainArea form {
 	padding-left: 50px;
 }
 
@@ -184,7 +198,8 @@ ul {
 	width: 100%;
 	height: 25px;
 	float: left;
-	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#a4cdec,endcolorstr=#ffffff,gradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#a4cdec,
+		endcolorstr=#ffffff, gradientType=0);
 	padding-left: 5px;
 	padding-top: 3px;
 }
@@ -272,8 +287,7 @@ ul {
 	text-align: center;
 }
 
-#InputDetailBar img,
-#InputDetailBar input{
+#InputDetailBar img, #InputDetailBar input {
 	margin-right: 15px;
 }
 
@@ -282,7 +296,8 @@ ul {
 	width: 100%;
 	border-top: 1px solid #abd8f9;
 	border-bottom: 3px solid #abd8f9;
-	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#ddedf8,endcolorstr=#ffffff,gradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#ddedf8,
+		endcolorstr=#ffffff, gradientType=0);
 	padding: 8px;
 }
 
@@ -310,7 +325,7 @@ ul {
 	background: #ffffff;
 }
 
-.PannelUl{
+.PannelUl {
 	width: 95%;
 	margin: 0px;
 	padding-top: 5px;
@@ -349,34 +364,34 @@ ul {
 }
 
 .ItemBlockBorderTree {
-    float: left;
+	float: left;
 	width: 25%;
 	text-align: left;
 	border: 1px solid #91c0e3;
-	height:600;
+	height: 600;
 }
 
 .ItemBlockBorderList {
-    float: right;
-	width: 73%;	
+	float: right;
+	width: 73%;
 	border: 1px solid #91c0e3;
 }
-
-
 
 #MainArea1 {
 	width: 100%;
 	border-top: 2px solid #ffffff;
-	background-color:#ffffff;
-	border-bottom:solid 1px #DFDFDF;
+	background-color: #ffffff;
+	border-bottom: solid 1px #DFDFDF;
 }
+
 .ItemBlockBorder2 {
 	width: 79%;
 	text-align: left;
-	float:right;
-	height:600;
-	border-left:1px solid #DFDFDF
+	float: right;
+	height: 600;
+	border-left: 1px solid #DFDFDF
 }
+
 .ItemBlock2 {
 	width: 100%;
 	text-align: left;
@@ -384,19 +399,16 @@ ul {
 }
 
 A.OpenWinLink:hover {
-	COLOR: #004779; TEXT-DECORATION: none;
+	COLOR: #004779;
+	TEXT-DECORATION: none;
 }
 
 #MainArea2 {
 	width: 100%;
 	background: url(images/inputPageHeadBg.gif) repeat-x;
 	border-top: 2px solid #ffffff;
-	height:87.1%;
+	height: 87.1%;
 }
-
-
-
-
 
 #QueryArea1 {
 	float: left;
@@ -404,7 +416,7 @@ A.OpenWinLink:hover {
 	border-top: 1px solid #ABD9FB;
 	border-bottom: 1px solid #ABD9FB;
 	padding: 8px;
-	background-color:#E5F2FA
+	background-color: #E5F2FA
 }
 
 .Download_title {
@@ -413,14 +425,14 @@ A.OpenWinLink:hover {
 	color: #024E7F;
 }
 
-#FileDownLoadAreaBorder{
+#FileDownLoadAreaBorder {
 	background-color: #F3F9FD;
 	border: 1px solid #91c0e3;
 	padding: 3px;
 	width: 320px;
 }
 
-#FileDownLoadArea{
+#FileDownLoadArea {
 	background-color: #ffffff;
 	padding: 10px;
 	width: 100%;
@@ -431,25 +443,27 @@ A.OpenWinLink:hover {
 	height: 30px;
 }
 
-#ContentArea1{
-	background-color:#ffffff;
-	width:100%;
-	padding-left:46px;
-	padding-top:10px;
-	padding-right:15px;
+#ContentArea1 {
+	background-color: #ffffff;
+	width: 100%;
+	padding-left: 46px;
+	padding-top: 10px;
+	padding-right: 15px;
 }
-#sc{
-	height:60;
-	border:1px solid #91c0e3;
-	overflow-y:auto;
-	overflow-x:visible;
-	padding:2px;
-	background-color:#ffffff
+
+#sc {
+	height: 60;
+	border: 1px solid #91c0e3;
+	overflow-y: auto;
+	overflow-x: visible;
+	padding: 2px;
+	background-color: #ffffff
 }
-#ContentArea1{
-	background-color:#ffffff;
-	width:100%;
-	height:56.3%
+
+#ContentArea1 {
+	background-color: #ffffff;
+	width: 100%;
+	height: 56.3%
 }
 
 .FuncBtnHeadNoBottom {
@@ -474,13 +488,12 @@ A.OpenWinLink:hover {
 	width: 2px;
 	height: 19px;
 }
-.msgBorder{
-		border: 1px solid #ABD9FB;
+
+.msgBorder {
+	border: 1px solid #ABD9FB;
 }
 
-
-#Description, 
-.Description {
+#Description, .Description {
 	float: left;
 	width: 90%;
 	margin-bottom: 35px;
@@ -498,7 +511,8 @@ A.OpenWinLink:hover {
 	border-left: 1px solid #d2d2d2;
 	border-right: 1px solid #ffffff;
 	border-top: 1px solid #d2d2d2;
-	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#e6e6e6,endcolorstr=#ffffff,gradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#e6e6e6,
+		endcolorstr=#ffffff, gradientType=0);
 }
 
 #TableTitle td.tdEnd {
@@ -506,7 +520,8 @@ A.OpenWinLink:hover {
 	border-left: 1px solid #d2d2d2;
 	border-right: 1px solid #d2d2d2;
 	border-top: 1px solid #d2d2d2;
-	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#e6e6e6,endcolorstr=#ffffff,gradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#e6e6e6,
+		endcolorstr=#ffffff, gradientType=0);
 }
 
 #TableData td {
@@ -565,7 +580,8 @@ A.OpenWinLink:hover {
 }
 
 #FilePath div.PathTitle {
-	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#f0f7fc,endcolorstr=#cde2f2,gradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#f0f7fc,
+		endcolorstr=#cde2f2, gradientType=0);
 	padding-left: 5px;
 	padding-right: 8px;
 	padding-top: 5px;
@@ -586,7 +602,8 @@ A.OpenWinLink:hover {
 }
 
 #FilePath div.PathEnd {
-	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#f0f7fc,endcolorstr=#cde2f2,gradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#f0f7fc,
+		endcolorstr=#cde2f2, gradientType=0);
 	height: 100%;
 	float: right;
 	padding-top: 5px;
@@ -601,7 +618,8 @@ A.OpenWinLink:hover {
 	width: 100%;
 	border-top: 1px solid #abd8f9;
 	border-bottom: 1px solid #abd8f9;
-	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#ddedf8,endcolorstr=#f3f9fc,gradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#ddedf8,
+		endcolorstr=#f3f9fc, gradientType=0);
 	color: #4891c6;
 	height: 35px;
 	padding-left: 3px;
@@ -625,7 +643,7 @@ A.OpenWinLink:hover {
 	padding: 1px;
 }
 
-.show{
+.show {
 	left: 110px;
 	height: 20px;
 	width: 300px;
@@ -633,7 +651,7 @@ A.OpenWinLink:hover {
 	color: #004b82;
 	border: 1px solid #abd8f9;
 	background: #ffffff;
-	position:absolute;
+	position: absolute;
 	z-index: 1;
 }
 
@@ -642,7 +660,7 @@ A.OpenWinLink:hover {
 	padding-top: 3px;
 	padding-left: 130px;
 	font-weight: bold;
-	position:absolute;
+	position: absolute;
 	z-index: 2;
 }
 
@@ -663,13 +681,12 @@ A.OpenWinLink:hover {
 	border-top: 1px solid #d2d2d2;
 }
 
-#left{
+#left {
 	float: left;
 	background: url(images/title_bg_head.gif) no-repeat;
 	height: 28px;
 	width: 5px;
 }
-
 
 #content {
 	float: left;
@@ -690,49 +707,56 @@ A.OpenWinLink:hover {
 	height: 28px;
 	width: 80px;
 }
+
 #TableTitle1 {
 	float: left;
 	width: 100%;
 	height: 25px;
 	border-top: 1px solid #d2d2d2;
 	border-bottom: 1px solid #d2d2d2;
-	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#e6e6e6,endcolorstr=#ffffff,gradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#e6e6e6,
+		endcolorstr=#ffffff, gradientType=0);
 }
+
 #TableTitle1 td {
 	height: 25px;
 	border-left: 1px solid #d2d2d2;
 	border-right: 1px solid #ffffff;
-}#TableData1 {
+}
+
+#TableData1 {
 	width: 100%;
 }
+
 #TableData1 td {
 	height: 24px;
 	vertical-align: middle;
 	border-bottom: 1px solid #d2d2d2;
 	padding-left: 8px;
 }
-.error{
+
+.error {
 	color: red;
 }
 
-label.error{
+label.error {
 	color: red;
 	margin-left: 10px;
 }
 
-.PageView{
-    font-family: tohoma; 
+.PageView {
+	font-family: tohoma;
 }
 
-.CurrentPage{
-    color: red;
+.CurrentPage {
+	color: red;
 }
 
-.PageNumInput{
-    width: 50px;
-    height: 20px;
-    padding: 1px;
-    font-size: 11px;
+.PageNumInput {
+	width: 50px;
+	height: 20px;
+	padding: 1px;
+	font-size: 11px;
 }
 
 #PageHead {
@@ -741,7 +765,8 @@ label.error{
 
 .ButtonStyle {
 	border: 1px solid #87a3c1;
-	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#ffffff,endcolorstr=#c5e7ff,gradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#ffffff,
+		endcolorstr=#c5e7ff, gradientType=0);
 	color: #004a7d;
 	padding-left: 8px;
 	padding-right: 8px;
@@ -755,23 +780,24 @@ select {
 	color: #004779;
 }
 
-form{
-	margin: 0; 
+form {
+	margin: 0;
 	padding: 0;
 }
+
 .scrollStyle {
 	overflow: auto;
 	height: 100%;
 }
 
 .writeTD {
-	BORDER: #91c0e3 1px solid; 
+	BORDER: #91c0e3 1px solid;
 }
 
 .InputAreaStyle {
-	BORDER: #91c0e3 1px solid; 
+	BORDER: #91c0e3 1px solid;
 	width: 100%;
-	HEIGHT: 95%; 
+	HEIGHT: 95%;
 	BACKGROUND-COLOR: #FFFFFF;
 	color: #004779;
 }
@@ -784,22 +810,22 @@ form{
 	color: #004779;
 }
 
-.InputStyle1{
-	BORDER-TOP: #CCCCCC 1px solid; 
-	BORDER-BOTTOM: #CCCCCC 1px solid; 
-	BORDER-LEFT: #CCCCCC 1px solid; 
+.InputStyle1 {
+	BORDER-TOP: #CCCCCC 1px solid;
+	BORDER-BOTTOM: #CCCCCC 1px solid;
+	BORDER-LEFT: #CCCCCC 1px solid;
 	BORDER-RIGHT: #CCCCCC 1px solid;
 	BACKGROUND-COLOR: #FFFFFF;
-	color: #616161; 
+	color: #616161;
 	BACKGROUND-COLOR: #FFFFFF;
 	width: 100%;
 	HEIGHT: 22px;
-	padding:3px;
-	font-size:10pt; 
+	padding: 3px;
+	font-size: 10pt;
 }
 
-.TextareaStyle{
-	BORDER: #91c0e3 1px solid; 
+.TextareaStyle {
+	BORDER: #91c0e3 1px solid;
 	width: 300px;
 	height: 80px;
 	BACKGROUND-COLOR: #FFFFFF;
@@ -807,40 +833,39 @@ form{
 }
 
 .disabledInput {
-	BORDER-TOP: #91c0e3 1px solid; 
-	BORDER-BOTTOM: #91c0e3 1px solid; 
-	BORDER-LEFT: #91c0e3 1px solid; 
-	BORDER-RIGHT: #91c0e3 1px solid; 
+	BORDER-TOP: #91c0e3 1px solid;
+	BORDER-BOTTOM: #91c0e3 1px solid;
+	BORDER-LEFT: #91c0e3 1px solid;
+	BORDER-RIGHT: #91c0e3 1px solid;
 	width: 100%;
-	HEIGHT: auto; 
+	HEIGHT: auto;
 	BACKGROUND-COLOR: #FFFFFF
 }
 
 .errorInput {
-	BORDER-TOP: #91c0e3 1px solid; 
-	BORDER-BOTTOM: #91c0e3 1px solid; 
-	BORDER-LEFT: #91c0e3 1px solid; 
-	BORDER-RIGHT: #91c0e3 1px solid; 
-	HEIGHT: auto; 
-	BACKGROUND-COLOR: #F8E5E4
-	color: #004779;
+	BORDER-TOP: #91c0e3 1px solid;
+	BORDER-BOTTOM: #91c0e3 1px solid;
+	BORDER-LEFT: #91c0e3 1px solid;
+	BORDER-RIGHT: #91c0e3 1px solid;
+	HEIGHT: auto;
+	BACKGROUND-COLOR: #F8E5E4 color: #004779;
 }
 
 .notWrite {
-	BORDER-TOP: #91c0e3 0px solid; 
-	BORDER-BOTTOM: #91c0e3 0px solid; 
-	BORDER-LEFT: #91c0e3 0px solid; 
-	BORDER-RIGHT: #91c0e3 0px solid; 
-	HEIGHT: auto; 
+	BORDER-TOP: #91c0e3 0px solid;
+	BORDER-BOTTOM: #91c0e3 0px solid;
+	BORDER-LEFT: #91c0e3 0px solid;
+	BORDER-RIGHT: #91c0e3 0px solid;
+	HEIGHT: auto;
 	BACKGROUND-COLOR: transparent;
 	color: #004779;
 }
 
 .notWriteByTextArea {
-	BORDER-TOP: #91c0e3 0px solid; 
-	BORDER-BOTTOM: #91c0e3 0px solid; 
-	BORDER-LEFT: #91c0e3 0px solid; 
-	BORDER-RIGHT: #91c0e3 0px solid; 
+	BORDER-TOP: #91c0e3 0px solid;
+	BORDER-BOTTOM: #91c0e3 0px solid;
+	BORDER-LEFT: #91c0e3 0px solid;
+	BORDER-RIGHT: #91c0e3 0px solid;
 	HEIGHT: 100%;
 	BACKGROUND-COLOR: transparent;
 	color: #004779;
@@ -848,22 +873,21 @@ form{
 
 .SelectStyle {
 	width: 250px;
-	BORDER-TOP: #91c0e3 1px solid; 
-	BORDER-BOTTOM: #91c0e3 1px solid; 
-	BORDER-LEFT: #91c0e3 1px solid; 
-	BORDER-RIGHT: #91c0e3 1px solid; 
+	BORDER-TOP: #91c0e3 1px solid;
+	BORDER-BOTTOM: #91c0e3 1px solid;
+	BORDER-LEFT: #91c0e3 1px solid;
+	BORDER-RIGHT: #91c0e3 1px solid;
 	color: #004779;
 	font-family: "Tahoma";
 }
 
-.MoveButtonStyle{
+.MoveButtonStyle {
 	height: 20px;
 	width: 20px;
 	font-family: Webdings;
 	background-color: #dbecf8;
 	border: 1px solid #2886c5;
 	color: #2886c5;
-	
 }
 
 .DetailBlock {
@@ -901,8 +925,7 @@ form{
 	background-position: 0px 1px;
 }
 
-#PageSelectorNum,
-.PageSelectorNum {
+#PageSelectorNum, .PageSelectorNum {
 	background: url(images/pageSelector_bg.gif) no-repeat;
 	background-position: 0px 3px;
 	padding-left: 0px;
@@ -922,29 +945,34 @@ form{
 }
 
 #PageSelectorBar A:link {
-	COLOR: #005791; TEXT-DECORATION: none
+	COLOR: #005791;
+	TEXT-DECORATION: none
 }
 
 #PageSelectorBar A:visited {
-	COLOR: #005791; TEXT-DECORATION: none
+	COLOR: #005791;
+	TEXT-DECORATION: none
 }
 
 #PageSelectorBar A:active {
-	COLOR: #005791; TEXT-DECORATION: none
+	COLOR: #005791;
+	TEXT-DECORATION: none
 }
 
 #PageSelectorBar A:hover {
-	COLOR: #005791; TEXT-DECORATION: none;
+	COLOR: #005791;
+	TEXT-DECORATION: none;
 }
 
 #Calendar {
 	scrolling: no;
-	border:1px solid #EEEEEE ;
+	border: 1px solid #EEEEEE;
 	position: absolute;
-	width: 160px; 
+	width: 160px;
 	height: 140px;
-	z-index: 200; 
-	filter: progid:DXImageTransform.Microsoft.Shadow(direction=135,color=#dddddd,strength=5);
+	z-index: 200;
+	filter: progid:DXImageTransform.Microsoft.Shadow(direction=135, color=#dddddd,
+		strength=5);
 }
 
 .Time_Header {
@@ -973,7 +1001,7 @@ form{
 }
 
 .Time_title {
-	float:left;
+	float: left;
 	width: 30px;
 	text-align: right;
 }
@@ -984,7 +1012,7 @@ form{
 }
 
 .inputdate {
-	border:1px solid #7287c6;
+	border: 1px solid #7287c6;
 	font-size: 13px;
 	font-style: normal;
 	height: 16px;
@@ -1006,9 +1034,9 @@ form{
 }
 
 #Time_Tail {
-	float: right; 
-	padding-right: 10px; 
-	height:20px;
+	float: right;
+	padding-right: 10px;
+	height: 20px;
 	cursor: hand;
 }
 
@@ -1030,27 +1058,27 @@ form{
 
 .DotButton {
 	border: 1px solid #87a3c1;
-	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#ffffff,endcolorstr=#c5e7ff,gradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#ffffff,
+		endcolorstr=#c5e7ff, gradientType=0);
 	color: #004a7d;
 	padding-left: 8px;
 	padding-right: 8px;
 	padding-top: 1px;
 	cursor: hand;
-
 }
 
 /*====================*/
-td.tsubmitBtnTD{
-	padding-top:10px; 
-	padding-left:35%;
+td.tsubmitBtnTD {
+	padding-top: 10px;
+	padding-left: 35%;
 }
 
-.mainForm{
+.mainForm {
 	margin-left: 50px;
 	width: 80%;
 	border: none;
 }
 
-.red{
+.red {
 	color: red;
 }

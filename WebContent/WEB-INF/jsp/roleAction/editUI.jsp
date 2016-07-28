@@ -41,7 +41,8 @@
 						</tr>
 						<tr>
 							<td>岗位说明</td>
-							<td><s:textarea name="description" cssClass="TextareaStyle required"></s:textarea></td>
+							<td><s:textarea name="description"
+									cssClass="TextareaStyle required"></s:textarea></td>
 						</tr>
 					</table>
 				</div>

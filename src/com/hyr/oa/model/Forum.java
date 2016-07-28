@@ -4,7 +4,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -126,7 +125,7 @@ public class Forum
 	/**
 	 * @return the topics
 	 */
-	@OneToMany(mappedBy = "forum") 
+	@OneToMany(mappedBy = "forum")
 	public Set<Topic> getTopics()
 	{
 		return topics;

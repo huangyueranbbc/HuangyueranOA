@@ -5,7 +5,7 @@ import java.util.Map;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-import com.hyr.oa.base.BaseAction;
+import com.hyr.oa.base.ModelDrivenBaseAction;
 import com.hyr.oa.model.User;
 import com.hyr.oa.util.AppException;
 import com.opensymphony.xwork2.ActionContext;
@@ -17,7 +17,7 @@ import com.opensymphony.xwork2.ActionContext;
  */
 @Controller
 @Scope("prototype")
-public class LoginoutAction extends BaseAction<User>
+public class LoginoutAction extends ModelDrivenBaseAction<User>
 {
 	private static final long serialVersionUID = -7711077086531863671L;
 

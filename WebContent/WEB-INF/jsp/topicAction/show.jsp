@@ -171,8 +171,8 @@
 								<td class="Footer" height="28" align="center" valign="bottom">
 									<ul style="margin: 0px; width: 98%;">
 										<li style="float: left; line-height: 18px;"><font
-											color=#C30000>[${(currentPage-1)*pageSize+status.count}楼]</font> <s:date
-												name="#postTime" format="yyyy-MM-dd HH:mm:ss" /></li>
+											color=#C30000>[${(currentPage-1)*pageSize+status.count}楼]</font>
+											<s:date name="#postTime" format="yyyy-MM-dd HH:mm:ss" /></li>
 										<li style="float: right;"><a
 											href="javascript:scroll(0,0)"> <img border="0"
 												src="<%=basePath%>style/images/top.gif" />

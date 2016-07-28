@@ -35,9 +35,10 @@
 					<table cellpadding="0" cellspacing="0" class="mainForm">
 						<tr>
 							<td width="100">上级部门</td>
-							<td><s:select name="parentId" cssClass="SelectStyle required"
-									list="departmentList" listKey="id" listValue="name"
-									headerKey="" headerValue="==请选择部门==">
+							<td><s:select name="parentId"
+									cssClass="SelectStyle required" list="departmentList"
+									listKey="id" listValue="name" headerKey=""
+									headerValue="==请选择部门==">
 								</s:select></td>
 						</tr>
 						<tr>
@@ -47,7 +48,8 @@
 						</tr>
 						<tr>
 							<td>职能说明</td>
-							<td><s:textarea name="description" cssClass="TextareaStyle required"> 
+							<td><s:textarea name="description"
+									cssClass="TextareaStyle required">
 								</s:textarea></td>
 						</tr>
 					</table>

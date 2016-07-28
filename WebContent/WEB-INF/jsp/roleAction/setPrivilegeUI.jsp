@@ -96,28 +96,27 @@
 									<ul id="tree">
 										<!-------- 第一层 -------->
 										<s:iterator value="privilegeTopList">
-											<li><input
-													type="checkbox" name="privilegeIds" value="${id}"
-													id="cb_${id }"
-													<s:property value="%{id in privilegeIds ?'checked':''}"/> />
-													<label for="cb_${id }"><span class='folder' id='45'>${name }</span></label>
+											<li><input type="checkbox" name="privilegeIds"
+												value="${id}" id="cb_${id }"
+												<s:property value="%{id in privilegeIds ?'checked':''}"/> />
+												<label for="cb_${id }"><span class='folder' id='45'>${name }</span></label>
 												<ul>
 													<!-------- 第二层 -------->
 													<s:iterator value="children">
-														<li><input
-																type="checkbox" name="privilegeIds" value="${id}"
-																id="cb_${id }"
-																<s:property value="%{id in privilegeIds ?'checked':''}"/> />
-																<label for="cb_${id }"><span class='folder' id='45'>${name }</span></label>
+														<li><input type="checkbox" name="privilegeIds"
+															value="${id}" id="cb_${id }"
+															<s:property value="%{id in privilegeIds ?'checked':''}"/> />
+															<label for="cb_${id }"><span class='folder'
+																id='45'>${name }</span></label>
 															<ul>
 																<!-------- 第三层 -------->
 																<s:iterator value="children">
-																	<li><input
-																			type="checkbox" name="privilegeIds" value="${id}"
-																			id="cb_${id }"
-																			<s:property value="%{id in privilegeIds ?'checked':''}"/> />
-																			<label for="cb_${id }"><span class='folder' id='45'>${name }</span></label></li> 
-																</s:iterator> 
+																	<li><input type="checkbox" name="privilegeIds"
+																		value="${id}" id="cb_${id }"
+																		<s:property value="%{id in privilegeIds ?'checked':''}"/> />
+																		<label for="cb_${id }"><span class='folder'
+																			id='45'>${name }</span></label></li>
+																</s:iterator>
 															</ul></li>
 													</s:iterator>
 												</ul></li>

@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-import com.hyr.oa.base.BaseAction;
+import com.hyr.oa.base.ModelDrivenBaseAction;
 import com.hyr.oa.model.Department;
 import com.hyr.oa.util.AppException;
 import com.hyr.oa.util.DepartmentUtils;
@@ -13,7 +13,7 @@ import com.opensymphony.xwork2.ActionContext;
 
 @Controller
 @Scope("prototype")
-public class DepartmentAction extends BaseAction<Department>
+public class DepartmentAction extends ModelDrivenBaseAction<Department>
 {
 
 	public DepartmentAction() throws AppException

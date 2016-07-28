@@ -1,11 +1,11 @@
 <html>
-	<body>
-		<textarea name="content"></textarea>
-		<input type="button" onclick="getContent()" value="Get content"/>
-		<input type="button" onclick="getContent2()" value="Get content"/>
+<body>
+	<textarea name="content"></textarea>
+	<input type="button" onclick="getContent()" value="Get content" />
+	<input type="button" onclick="getContent2()" value="Get content" />
 
-		<script type="text/javascript" src="fckeditor.js"></script>
-		<script type="text/javascript">
+	<script type="text/javascript" src="fckeditor.js"></script>
+	<script type="text/javascript">
 			var editor = new FCKeditor('content');
 			editor.BasePath="./";
 			//editor.ToolbarSet= "itcastForum"; //"simple";
@@ -25,5 +25,5 @@
 				alert(oEditor.GetXHTML(false));
 			}
 		</script>
-	</body>
+</body>
 </html>

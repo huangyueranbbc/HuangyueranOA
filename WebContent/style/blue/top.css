@@ -1,11 +1,12 @@
 body {
-	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#094c79,endcolorstr=#99caeb,gradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#094c79,
+		endcolorstr=#99caeb, gradientType=0);
 }
 
 ul {
 	margin-left: 0px;
 	margin-bottom: 0px;
-	list-style-type:none;
+	list-style-type: none;
 }
 
 #AwokeNum {
@@ -45,10 +46,11 @@ ul {
 #Head1Right_UserName {
 	float: left;
 	height: 100%;
-	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#014f83,endcolorstr=#2b6798,gradientType=1);
+	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#014f83,
+		endcolorstr=#2b6798, gradientType=1);
 	padding-top: 6px;
 	font-size: 12px;
-	font-family: "ËÎÌå";
+	font-family: "ï¿½ï¿½ï¿½ï¿½";
 	color: #b3e1ff;
 }
 
@@ -57,12 +59,12 @@ ul {
 }
 
 #Head1Right_UserDept {
-	float:left;
+	float: left;
 	background: #2b6798;
 	height: 100%;
 	padding-top: 7px;
 	font-size: 12px;
-	font-family: "ËÎÌå";
+	font-family: "ï¿½ï¿½ï¿½ï¿½";
 	color: #75abd2;
 }
 
@@ -72,10 +74,10 @@ ul {
 	padding-top: 6px;
 	padding-left: 8px;
 	padding-right: 10px;
-	background:#2b6798;
+	background: #2b6798;
 	cursor: hand;
 	font-size: 12px;
-	font-family: "ËÎÌå";
+	font-family: "ï¿½ï¿½ï¿½ï¿½";
 	color: #f6d881;
 }
 
@@ -90,7 +92,7 @@ ul {
 
 #Head1Right_Time {
 	font-size: 12px;
-	font-family: "ËÎÌå";
+	font-family: "ï¿½ï¿½ï¿½ï¿½";
 	color: #b3e1ff;
 	float: left;
 	height: 100%;
@@ -100,8 +102,8 @@ ul {
 }
 
 #Head1Right_Button {
-	position: absolute; 
-	top: 35px; 
+	position: absolute;
+	top: 35px;
 	right: 20%;
 	float: left;
 }
@@ -112,10 +114,10 @@ ul {
 }
 
 #Head1Right_SystemButton {
-	position: absolute; 
-	top: 35px; 
-	right:5px;
-	float:left;
+	position: absolute;
+	top: 35px;
+	right: 5px;
+	float: left;
 }
 
 #Head1Right_SystemButton img {
@@ -133,7 +135,7 @@ ul {
 	border-bottom: 1px solid #ffffff;
 }
 
-#Head2_Awoke{
+#Head2_Awoke {
 	float: left;
 	height: 100%;
 	padding-left: 19px;
@@ -141,7 +143,7 @@ ul {
 }
 
 #Head2_Awoke A {
-	font-family: "ËÎÌå";
+	font-family: "ï¿½ï¿½ï¿½ï¿½";
 	font-size: 12px;
 	color: #ffffff;
 	TEXT-DECORATION: none
@@ -158,17 +160,17 @@ ul {
 	float: right;
 	height: 100%;
 	padding-right: 26px;
-	font-family: "ËÎÌå";
+	font-family: "ï¿½ï¿½ï¿½ï¿½";
 	font-size: 13px;
 	color: #ffffff;
 	padding-top: 10px;
 }
 
 #Head2_FunctionList td {
-	font-family: "ËÎÌå";
+	font-family: "ï¿½ï¿½ï¿½ï¿½";
 	font-size: 12px;
-	color:#FFFFFF;
-	font-weight:bold;
+	color: #FFFFFF;
+	font-weight: bold;
 }
 
 .Btn {
@@ -179,13 +181,13 @@ ul {
 }
 
 .Btn_Left {
-	height: 24px; 
+	height: 24px;
 	width: 4px;
 	background: url(images/btn_left.gif) no-repeat;
 }
 
 .Btn_Right {
-	height: 24px; 
+	height: 24px;
 	width: 4px;
 	background: url(images/btn_right.gif) no-repeat;
 }
@@ -204,31 +206,34 @@ ul {
 
 .Menu_head_Table {
 	border: solid 1px #D1D1D1;
-	FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=1,startColorStr=#F8F8F8,endColorStr=#DDDDDD);
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=1,
+		startColorStr=#F8F8F8, endColorStr=#DDDDDD);
 }
 
 .Menu_head_Title {
-	PADDING-TOP:3px;
+	PADDING-TOP: 3px;
 	font-size: 10pt;
 	color: #822219;
 }
 
 .Menu_layer1_Table {
-	FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=1,startColorStr=#A9C6FF,endColorStr=#CFE5F9);
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=1,
+		startColorStr=#A9C6FF, endColorStr=#CFE5F9);
 }
 
 .Menu_layer1_Title {
-	PADDING-TOP:3px;
+	PADDING-TOP: 3px;
 	font-size: 9pt;
 	color: #000000;
 }
 
 .Menu_layer2_Table {
-	FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=1,startColorStr=#C0D6FF,endColorStr=#D6ffFF);
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=1,
+		startColorStr=#C0D6FF, endColorStr=#D6ffFF);
 }
 
 .Menu_layer2_Title {
-	PADDING-TOP:3px;
+	PADDING-TOP: 3px;
 	font-size: 9pt;
 	color: #000000;
 }
@@ -237,7 +242,8 @@ ul {
 	background: #FFFFFF;
 	height: 1px;
 }
-#messageArea{
+
+#messageArea {
 	color: white;
 	font-size: 14px;
 	font-weight: bold;
