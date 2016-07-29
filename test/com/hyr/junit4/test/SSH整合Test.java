@@ -6,6 +6,8 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.hyr.oa.model.Template;
+
 public class SSH整合Test
 {
 	private ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
@@ -16,6 +18,8 @@ public class SSH整合Test
 	{
 		SessionFactory sessionFactory = (SessionFactory) applicationContext.getBean("sessionFactory");
 		System.out.println(sessionFactory.getClass());
+//		Template template=new Template();
+//		sessionFactory.openSession().save(template);
 	}
 
 	// 测试transaction

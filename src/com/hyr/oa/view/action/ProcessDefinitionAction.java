@@ -3,6 +3,7 @@ package com.hyr.oa.view.action;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import org.activiti.engine.repository.ProcessDefinition;
@@ -32,11 +33,15 @@ public class ProcessDefinitionAction extends BaseAction
 		return "list";
 	}
 
-	/** 删除 删除指定Key的所有版本的流程定义 */
-	public String delete() throws AppException
+	/**
+	 * 删除 删除指定Key的所有版本的流程定义
+	 * 
+	 * @throws UnsupportedEncodingException
+	 */
+	public String delete() throws AppException, UnsupportedEncodingException
 	{
 		processDefinitionService.deleteByKey(key);
-
+ 
 		return "toList";
 	}
 
@@ -62,7 +67,7 @@ public class ProcessDefinitionAction extends BaseAction
 			// 自己将客户端传递的URL编码的数据进行解码
 
 			inputStream = processDefinitionService.getProcessDiagramResourceAsStream(id);
-			System.out.println(inputStream); 
+			System.out.println(inputStream);
 		} catch (Exception e)
 		{
 			e.printStackTrace();

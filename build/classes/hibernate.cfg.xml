@@ -8,9 +8,9 @@
 	<session-factory>
 
 		<property name="dialect">
-			org.hibernate.dialect.MySQLInnoDBDialect
+			org.hibernate.dialect.MySQL5InnoDBDialect
 		</property>
-
+ 
 		<!-- JDBC connection pool (use the built-in) -->
 		<property name="connection.pool_size">30</property>
 

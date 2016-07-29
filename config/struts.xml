@@ -125,6 +125,23 @@
 			</result>
 		</action>
 
+		<!-- 模板管理 -->
+		<action name="templateAction_*" class="com.hyr.oa.view.action.TemplateAction"
+			method="{1}">
+			<result name="list">/WEB-INF/jsp/templateAction/list.jsp</result>
+			<result name="editUI">/WEB-INF/jsp/templateAction/editUI.jsp</result>
+			<result name="addUI">/WEB-INF/jsp/templateAction/addUI.jsp</result>
+			<result name="toList" type="redirectAction">templateAction_list</result>
+
+
+			<!-- 下载用的用result是stream类型 -->
+			<result name="download" type="stream">
+				<param name="inputName">inputStream</param>
+				<param name="contentType">application/octet-stream</param>
+				<param name="contentDisposition">attachment;filename="${#fileName}.doc"</param>
+			</result>
+		</action> 
+
 	</package>
 
 </struts>

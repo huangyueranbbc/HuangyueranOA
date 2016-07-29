@@ -5,6 +5,7 @@
 <%@ include file="/WEB-INF/jsp/public/header.jspf"%>
   <script type="text/javascript">
 	    function showProcessImage( pdId ){
+	    	processDefId=encodeURI(pdId); 
             var url = "processDefinitionAction_showProcessImage?id=" + pdId; 
             window.showModalDialog(url, null, "dialogHeight:500px, dialogWidth:450px;resizable:yes");
         }

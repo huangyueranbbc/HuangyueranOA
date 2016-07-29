@@ -1,5 +1,10 @@
 package com.hyr.oa.base;
 
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.UUID;
+
 import javax.annotation.Resource;
 
 import org.apache.struts2.ServletActionContext;
@@ -11,9 +16,9 @@ import com.hyr.oa.service.PrivilegeService;
 import com.hyr.oa.service.ProcessDefinitionService;
 import com.hyr.oa.service.ReplyService;
 import com.hyr.oa.service.RoleService;
+import com.hyr.oa.service.TemplateService;
 import com.hyr.oa.service.TopicService;
 import com.hyr.oa.service.UserService;
-import com.hyr.oa.service.impl.ProcessDefinitionServiceImpl;
 import com.hyr.oa.util.AppException;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -39,6 +44,8 @@ public class BaseAction extends ActionSupport
 	protected ReplyService replyService;
 	@Resource(name = "processDefinitionServiceImpl")
 	protected ProcessDefinitionService processDefinitionService;
+	@Resource(name = "templateServiceImpl")
+	protected TemplateService templateService;
 
 	// ========================== 工具方法 ==========================
 
@@ -58,6 +65,33 @@ public class BaseAction extends ActionSupport
 	public String getRequestIP() throws AppException
 	{
 		return ServletActionContext.getRequest().getRemoteAddr();
+	}
+
+	/**
+	 * 保存上传的文件，并返回在服务器端真实的存储路径
+	 * 
+	 * @param upload
+	 * @return
+	 */
+	protected String saveUploadFile(File upload)
+	{
+		// >> 1, 得到在保存的文件路径的真实地址
+		SimpleDateFormat sdf = new SimpleDateFormat("/yyyy/MM/dd/");
+		String basePath = ServletActionContext.getServletContext().getRealPath("/WEB-INF/upload_files");
+		String datePath = sdf.format(new Date());
+
+		// >> 2, 如果文件夹不存在，就创建
+		File dir = new File(basePath + datePath);
+		if (!dir.exists())
+		{
+			dir.mkdirs();
+		}
+		String path = basePath + datePath + UUID.randomUUID().toString()+System.currentTimeMillis(); // 注意同名的问题，可以使用uuid做为文件名 
+		File destFile = new File(path);
+
+		// >> 3, 移动文件
+		upload.renameTo(destFile);
+		return path;
 	}
 
 	/**
