@@ -11,6 +11,7 @@ import org.apache.struts2.ServletActionContext;
 
 import com.hyr.oa.model.User;
 import com.hyr.oa.service.DepartmentService;
+import com.hyr.oa.service.FlowService;
 import com.hyr.oa.service.ForumService;
 import com.hyr.oa.service.PrivilegeService;
 import com.hyr.oa.service.ProcessDefinitionService;
@@ -46,6 +47,8 @@ public class BaseAction extends ActionSupport
 	protected ProcessDefinitionService processDefinitionService;
 	@Resource(name = "templateServiceImpl")
 	protected TemplateService templateService;
+	@Resource(name = "flowServiceImpl")
+	protected FlowService flowService;
 
 	// ========================== 工具方法 ==========================
 
@@ -86,7 +89,7 @@ public class BaseAction extends ActionSupport
 		{
 			dir.mkdirs();
 		}
-		String path = basePath + datePath + UUID.randomUUID().toString()+System.currentTimeMillis(); // 注意同名的问题，可以使用uuid做为文件名 
+		String path = basePath + datePath + UUID.randomUUID().toString() + System.currentTimeMillis(); // 注意同名的问题，可以使用uuid做为文件名
 		File destFile = new File(path);
 
 		// >> 3, 移动文件

@@ -1,8 +1,13 @@
 package com.hyr.oa.model;
 
+import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -11,13 +16,14 @@ import javax.persistence.Table;
  * @category 申请模板实体
  */
 @Entity
-@Table(name = "hyr_oa_template") 
-public class Template
+@Table(name = "hyr_oa_template")
+public class Template implements Serializable
 {
 	private Long id;
 	private String name;
 	private String processKey;
 	private String path;
+	private Set<Application> applications = new HashSet<Application>();
 
 	/**
 	 * @return the id
@@ -87,6 +93,21 @@ public class Template
 	public void setPath(String path)
 	{
 		this.path = path;
+	}
+
+	@OneToMany(mappedBy = "template")
+	public Set<Application> getApplications()
+	{
+		return applications;
+	}
+
+	/**
+	 * @param applications
+	 *            the applications to set
+	 */
+	public void setApplications(Set<Application> applications)
+	{
+		this.applications = applications;
 	}
 
 }

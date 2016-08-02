@@ -19,11 +19,11 @@ import com.hyr.oa.model.User;
  * @author tyg
  * 
  */
-@Component 
+@Component
 public class Installer
 {
 	// UPDATE hyr_oa_reply SET deleted = 0;
-	
+
 	@Resource
 	private SessionFactory sessionFactory;
 
@@ -85,9 +85,9 @@ public class Installer
 		menu = new Privilege("审批流转", null, null);
 		menu1 = new Privilege("审批流程管理", "/processDefinitionAction_list", menu);
 		menu2 = new Privilege("申请模板管理", "/templateAction_list", menu);
-		menu3 = new Privilege("起草申请", "/flowAction_templatelist", menu);
-		menu4 = new Privilege("待我审批", "/flowAction_myTasklist", menu);
-		menu5 = new Privilege("我的申请查询", "/flowAction_myApplicationlist", menu); 
+		menu3 = new Privilege("起草申请", "/flowAction_templateList", menu);
+		menu4 = new Privilege("待我审批", "/flowAction_myTaskList", menu);
+		menu5 = new Privilege("我的申请查询", "/flowAction_myApplicationList", menu);
 
 		session.save(menu);
 		session.save(menu1);
