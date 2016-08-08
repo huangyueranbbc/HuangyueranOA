@@ -5,21 +5,12 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-
 /**
  * 流转的表单文档
  * 
  * @author tyg
  * 
  */
-@Entity
-@Table(name = "hyr_oa_application")
 public class Application implements Serializable
 {
 
@@ -32,8 +23,6 @@ public class Application implements Serializable
 	/** 状态常量：未通过 */
 	public static final String STATUS_REJECTED = "未通过";
 
-	@Id
-	@GeneratedValue
 	private Long id;
 	private Template template;// 所使用的申请模板
 	private Set<ApproveInfo> approveInfos = new HashSet<ApproveInfo>();
@@ -44,8 +33,6 @@ public class Application implements Serializable
 	private String path;// 文档的存储路径
 	private String status; // 当前的状态
 
-	@Id
-	@GeneratedValue
 	public Long getId()
 	{
 		return id;
@@ -56,7 +43,6 @@ public class Application implements Serializable
 		this.id = id;
 	}
 
-	@ManyToOne
 	public Template getTemplate()
 	{
 		return template;
@@ -67,7 +53,6 @@ public class Application implements Serializable
 		this.template = template;
 	}
 
-	@ManyToOne
 	public User getApplicant()
 	{
 		return applicant;
@@ -118,7 +103,6 @@ public class Application implements Serializable
 		this.status = status;
 	}
 
-	@OneToMany(mappedBy = "application")
 	public Set<ApproveInfo> getApproveInfos()
 	{
 		return approveInfos;

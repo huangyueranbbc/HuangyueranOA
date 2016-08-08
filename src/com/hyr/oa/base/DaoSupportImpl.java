@@ -46,7 +46,9 @@ public abstract class DaoSupportImpl<T> implements DaoSupport<T>
 	 */
 	protected Session getSession() throws AppException
 	{
-		return sessionFactory.getCurrentSession();
+		Session session = sessionFactory.getCurrentSession();
+		// 清楚缓存
+		return session;
 	}
 
 	public void save(T entity) throws AppException

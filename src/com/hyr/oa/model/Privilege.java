@@ -1,20 +1,8 @@
 package com.hyr.oa.model;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OrderBy;
-import javax.persistence.Table;
-
-import org.hibernate.annotations.Cascade;
 
 /**
  * 实体：权限
@@ -22,9 +10,7 @@ import org.hibernate.annotations.Cascade;
  * @author tyg
  * 
  */
-@Entity
-@Table(name = "hyr_oa_privilege")
-public class Privilege
+public class Privilege implements Serializable
 {
 	private Long id;
 	private String url;
@@ -45,8 +31,6 @@ public class Privilege
 		this.parent = parent;
 	}
 
-	@Id
-	@GeneratedValue
 	public Long getId()
 	{
 		return id;
@@ -77,7 +61,6 @@ public class Privilege
 		this.name = name;
 	}
 
-	@ManyToMany(mappedBy = "privileges", fetch = FetchType.EAGER)
 	public Set<Role> getRoles()
 	{
 		return roles;
@@ -88,7 +71,6 @@ public class Privilege
 		this.roles = roles;
 	}
 
-	@ManyToOne
 	public Privilege getParent()
 	{
 		return parent;
@@ -99,9 +81,6 @@ public class Privilege
 		this.parent = parent;
 	}
 
-	@OneToMany(mappedBy = "parent", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@Cascade(value = org.hibernate.annotations.CascadeType.ALL)
-	@OrderBy(value = "id")
 	public Set<Privilege> getChildren()
 	{
 		return children;

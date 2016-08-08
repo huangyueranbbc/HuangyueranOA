@@ -10,7 +10,7 @@
 		<property name="dialect">
 			org.hibernate.dialect.MySQL5InnoDBDialect
 		</property>
- 
+
 		<!-- JDBC connection pool (use the built-in) -->
 		<property name="connection.pool_size">30</property>
 
@@ -28,6 +28,18 @@
 
 		<!-- Drop and re-create the database schema on startup -->
 		<property name="hbm2ddl.auto">update</property>
+
+		<!-- 声明映射文件 -->
+		<mapping resource="com/hyr/oa/model/User.hbm.xml" />
+		<mapping resource="com/hyr/oa/model/Role.hbm.xml" />
+		<mapping resource="com/hyr/oa/model/Department.hbm.xml" />
+		<mapping resource="com/hyr/oa/model/Privilege.hbm.xml" />
+		<mapping resource="com/hyr/oa/model/Forum.hbm.xml" />
+		<mapping resource="com/hyr/oa/model/Reply.hbm.xml" />
+		<mapping resource="com/hyr/oa/model/Topic.hbm.xml" />
+		<mapping resource="com/hyr/oa/model/Template.hbm.xml" />
+		<mapping resource="com/hyr/oa/model/Application.hbm.xml" />
+		<mapping resource="com/hyr/oa/model/ApproveInfo.hbm.xml" />
 
 	</session-factory>
 

@@ -69,7 +69,7 @@
 						<td><s:date name="applyTime" format="yyyy年MM月dd日HH:mm:ss" />&nbsp;</td>
 						<td>${status}&nbsp;</td>
 						<td><a href="<%=basePath%>Flow_Formflow/showForm.html">查看申请信息</a>
-							<s:a action="flowAction_approvedHistoty?applicationId=%{id}">查看流转记录</s:a></td>
+							<s:a action="flowAction_approvedHistory?applicationId=%{id}">查看流转记录</s:a></td>
 					</tr>
 				</s:iterator>
 

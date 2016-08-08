@@ -11,6 +11,7 @@ import com.hyr.oa.cfg.Configuration;
 import com.hyr.oa.model.Forum;
 import com.hyr.oa.model.PageBean;
 import com.hyr.oa.model.Topic;
+import com.hyr.oa.model.User;
 import com.hyr.oa.service.TopicService;
 import com.hyr.oa.util.AppException;
 
@@ -22,7 +23,7 @@ import com.hyr.oa.util.AppException;
 @Transactional
 @Service("topicServiceImpl")
 @SuppressWarnings("unchecked")
-public class TopicServiceImpl extends DaoSupportImpl<Topic>implements TopicService
+public class TopicServiceImpl extends DaoSupportImpl<Topic> implements TopicService
 {
 
 	/**
@@ -79,6 +80,16 @@ public class TopicServiceImpl extends DaoSupportImpl<Topic>implements TopicServi
 		Long count = (Long) getSession().createQuery("SELECT COUNT(*) FROM Topic t WHERE t.forum = ?").setParameter(0, forum).uniqueResult();
 
 		return new PageBean(pageNum, pageSize, list, count.intValue());
+	}
+
+	/**
+	 * 根据用户删除用户主题
+	 * 
+	 * @param user
+	 */
+	public void deleteTopicByUser(User user) throws AppException
+	{
+		getSession().createQuery("DELETE Topic t WHERE t.author=? ").setParameter(0, user).executeUpdate();
 	}
 
 }

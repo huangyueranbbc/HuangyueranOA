@@ -5,12 +5,14 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.opensymphony.xwork2.ActionContext;
@@ -21,8 +23,6 @@ import com.opensymphony.xwork2.ActionContext;
  * @author tyg
  * 
  */
-@Entity
-@Table(name = "hyr_oa_user")
 public class User implements Serializable
 {
 	private Long id;
@@ -37,8 +37,6 @@ public class User implements Serializable
 	private String email; // 电子邮件
 	private String description; // 说明
 
-	@Id
-	@GeneratedValue
 	public Long getId()
 	{
 		return id;
@@ -49,7 +47,6 @@ public class User implements Serializable
 		this.id = id;
 	}
 
-	@ManyToOne
 	public Department getDepartment()
 	{
 		return department;
@@ -60,7 +57,6 @@ public class User implements Serializable
 		this.department = department;
 	}
 
-	@ManyToMany(fetch = FetchType.EAGER)
 	public Set<Role> getRoles()
 	{
 		return roles;
@@ -225,107 +221,6 @@ public class User implements Serializable
 	public boolean hasAdminPrivilege()
 	{
 		return "admin".equals(loginName);
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-	 */
-	@Override
-	public int hashCode()
-	{
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((department == null) ? 0 : department.hashCode());
-		result = prime * result + ((description == null) ? 0 : description.hashCode());
-		result = prime * result + ((email == null) ? 0 : email.hashCode());
-		result = prime * result + ((gender == null) ? 0 : gender.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((loginName == null) ? 0 : loginName.hashCode());
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + ((password == null) ? 0 : password.hashCode());
-		result = prime * result + ((phoneNumber == null) ? 0 : phoneNumber.hashCode());
-		result = prime * result + ((roles == null) ? 0 : roles.hashCode());
-		return result;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
-	@Override
-	public boolean equals(Object obj)
-	{
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		User other = (User) obj;
-		if (department == null)
-		{
-			if (other.department != null)
-				return false;
-		} else if (!department.equals(other.department))
-			return false;
-		if (description == null)
-		{
-			if (other.description != null)
-				return false;
-		} else if (!description.equals(other.description))
-			return false;
-		if (email == null)
-		{
-			if (other.email != null)
-				return false;
-		} else if (!email.equals(other.email))
-			return false;
-		if (gender == null)
-		{
-			if (other.gender != null)
-				return false;
-		} else if (!gender.equals(other.gender))
-			return false;
-		if (id == null)
-		{
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		if (loginName == null)
-		{
-			if (other.loginName != null)
-				return false;
-		} else if (!loginName.equals(other.loginName))
-			return false;
-		if (name == null)
-		{
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		if (password == null)
-		{
-			if (other.password != null)
-				return false;
-		} else if (!password.equals(other.password))
-			return false;
-		if (phoneNumber == null)
-		{
-			if (other.phoneNumber != null)
-				return false;
-		} else if (!phoneNumber.equals(other.phoneNumber))
-			return false;
-		if (roles == null)
-		{
-			if (other.roles != null)
-				return false;
-		} else if (!roles.equals(other.roles))
-			return false;
-		return true;
 	}
 
 }

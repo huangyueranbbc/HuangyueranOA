@@ -6,6 +6,7 @@ import com.hyr.oa.base.DaoSupport;
 import com.hyr.oa.model.PageBean;
 import com.hyr.oa.model.Reply;
 import com.hyr.oa.model.Topic;
+import com.hyr.oa.model.User;
 import com.hyr.oa.util.AppException;
 
 /**
@@ -34,5 +35,13 @@ public interface ReplyService extends DaoSupport<Reply>
 	 */
 	@Deprecated
 	PageBean getPageBeanByTopic(int pageNum, Topic topic) throws AppException;
+
+	/**
+	 * 根据用户删除用户所有回复
+	 * 
+	 * @param id
+	 * @throws AppException
+	 */
+	void deleteReplyByUser(User user) throws AppException;
 
 }

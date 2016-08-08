@@ -1,5 +1,7 @@
 package com.hyr.oa.model;
 
+import java.io.Serializable;
+
 import org.activiti.engine.task.Task;
 
 /**
@@ -8,7 +10,7 @@ import org.activiti.engine.task.Task;
  * @author tyg
  * 
  */
-public class TaskView
+public class TaskView implements Serializable
 {
 	private Task task;
 	private Application application;

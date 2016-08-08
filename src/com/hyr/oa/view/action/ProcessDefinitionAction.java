@@ -40,8 +40,9 @@ public class ProcessDefinitionAction extends BaseAction
 	 */
 	public String delete() throws AppException, UnsupportedEncodingException
 	{
+		// flowService. 删除hyr_oa_approveinfo表中的数据
 		processDefinitionService.deleteByKey(key);
- 
+
 		return "toList";
 	}
 

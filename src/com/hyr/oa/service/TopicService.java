@@ -6,6 +6,7 @@ import com.hyr.oa.base.DaoSupport;
 import com.hyr.oa.model.Forum;
 import com.hyr.oa.model.PageBean;
 import com.hyr.oa.model.Topic;
+import com.hyr.oa.model.User;
 import com.hyr.oa.util.AppException;
 
 /**
@@ -34,5 +35,12 @@ public interface TopicService extends DaoSupport<Topic>
 	 */
 	@Deprecated
 	PageBean getPageBeanByForum(int pageNum, Forum forum) throws AppException;
+
+	/**
+	 * 根据用户删除用户主题
+	 * 
+	 * @param user
+	 */
+	void deleteTopicByUser(User user) throws AppException;
 
 }

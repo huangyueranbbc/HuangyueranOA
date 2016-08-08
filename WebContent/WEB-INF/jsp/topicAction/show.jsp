@@ -220,7 +220,7 @@
 						<tr height="30" class="Tint">
 							<td class="no_color_bg" colspan="2" align="center"><input
 								type="image"
-								src="<%=basePath%>style/blue/images/button/submit.PNG"
+								src="<%=basePath%>style/blue/images/button/submit.png"
 								style="margin-right: 15px;" /></td>
 						</tr>
 					</table>
@@ -235,4 +235,5 @@
 	</div>
 
 </body>
+<s:debug></s:debug> 
 </html>

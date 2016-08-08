@@ -3,20 +3,12 @@ package com.hyr.oa.model;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-
 /**
  * 审批信息
  * 
  * @author tyg
  * 
  */
-@Entity
-@Table(name = "hyr_oa_approveInfo")
 public class ApproveInfo implements Serializable
 {
 	private Long id;
@@ -27,8 +19,6 @@ public class ApproveInfo implements Serializable
 	private boolean approval; // 是否通过
 	private String comment; // 审批意见
 
-	@Id
-	@GeneratedValue
 	public Long getId()
 	{
 		return id;
@@ -39,7 +29,6 @@ public class ApproveInfo implements Serializable
 		this.id = id;
 	}
 
-	@ManyToOne
 	public User getApprover()
 	{
 		return approver;
@@ -60,7 +49,6 @@ public class ApproveInfo implements Serializable
 		this.approveTime = approveTime;
 	}
 
-	@ManyToOne
 	public Application getApplication()
 	{
 		return application;

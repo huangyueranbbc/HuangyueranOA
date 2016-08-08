@@ -1,13 +1,17 @@
 package com.hyr.oa.view.action;
 
 import java.io.File;
+import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
+import org.activiti.engine.task.Task;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import com.hyr.oa.base.BaseAction;
 import com.hyr.oa.model.Application;
+import com.hyr.oa.model.ApproveInfo;
 import com.hyr.oa.model.TaskView;
 import com.hyr.oa.model.Template;
 import com.hyr.oa.util.QueryHelper;
@@ -27,6 +31,11 @@ public class FlowAction extends BaseAction
 	private Long applicationId; //
 	private File upload; // 上传用的文件
 	private String status;
+	private String taskId; // 任务ID
+
+	private boolean approval;
+	private String comment;
+	private String outcome;
 
 	// ============================== 申请人的功能 ===================================
 
@@ -83,26 +92,39 @@ public class FlowAction extends BaseAction
 	/** 待我审批 */
 	public String myTaskList() throws Exception
 	{
-		List<TaskView> list = flowService.findMyTaskViewList(getCurrentUser());
-		ActionContext.getContext().put("list", list);
+		List<TaskView> taskViewList = flowService.findMyTaskViewList(getCurrentUser());
+		ActionContext.getContext().put("taskViewList", taskViewList);
 		return "myTaskList";
 	}
 
 	/** 审批处理页面 */
 	public String approveUI() throws Exception
 	{
+		List<Task> outcomes = flowService.getOutcomesByTaskId(taskId);
+		ActionContext.getContext().put("outcomes", outcomes);
 		return "approveUI";
 	}
 
 	/** 审批处理 */
 	public String approve() throws Exception
-	{
+	{// 封装对象
+		ApproveInfo approveInfo = new ApproveInfo();
+		approveInfo.setApproval(approval); //
+		approveInfo.setComment(comment);
+		approveInfo.setApplication(flowService.getApplicationById(applicationId)); // 所属的申请
+		approveInfo.setApprover(getCurrentUser()); // 审批人，当前登录用户
+		approveInfo.setApproveTime(new Date()); // 审批时间，当前时间
+
+		// 调用业务方法（保存审批信息，完成当前任务，维护申请的状态）
+		flowService.approve(approveInfo, taskId, outcome);
 		return "toMyTaskList";
 	}
 
 	/** 查看流转记录 */
 	public String approvedHistory() throws Exception
 	{
+		List<ApproveInfo> approveInfoList = flowService.getApproveInfosByApplicationId(applicationId);
+		ActionContext.getContext().put("approveInfoList", approveInfoList);
 		return "approvedHistory";
 	}
 
@@ -172,6 +194,46 @@ public class FlowAction extends BaseAction
 	public void setStatus(String status)
 	{
 		this.status = status;
+	}
+
+	public String getTaskId()
+	{
+		return taskId;
+	}
+
+	public void setTaskId(String taskId)
+	{
+		this.taskId = taskId;
+	}
+
+	public boolean isApproval()
+	{
+		return approval;
+	}
+
+	public void setApproval(boolean approval)
+	{
+		this.approval = approval;
+	}
+
+	public String getComment()
+	{
+		return comment;
+	}
+
+	public void setComment(String comment)
+	{
+		this.comment = comment;
+	}
+
+	public String getOutcome()
+	{
+		return outcome;
+	}
+
+	public void setOutcome(String outcome)
+	{
+		this.outcome = outcome;
 	}
 
 }

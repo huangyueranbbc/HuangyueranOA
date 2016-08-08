@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
 <html>
 <head>
-<title>部门设置</title>
+<title>审批处理</title>
 <%@include file="/WEB-INF/jsp/public/header.jspf"%>
 </head>
 <body>
@@ -15,7 +14,8 @@
 			<div id="Title">
 				<!--页面标题-->
 				<img border="0" width="13" height="13"
-					src="<%=basePath%>style/images/title_arrow.gif" /> 部门信息
+					src="${pageContext.request.contextPath}/style/images/title_arrow.gif" />
+				审批处理
 			</div>
 			<div id="Title_End"></div>
 		</div>
@@ -23,52 +23,81 @@
 
 	<!--显示表单内容-->
 	<div id=MainArea>
-		<s:form action="departmentAction_add">
-			<div class="ItemBlock_Title1">
-				<!-- 信息说明<DIV CLASS="ItemBlock_Title1">
-        	<IMG BORDER="0" WIDTH="4" HEIGHT="7" SRC="<%=basePath%>style/blue/images/item_point.gif" /> 部门信息 </DIV>  -->
-			</div>
 
-			<!-- 表单内容显示 -->
+
+		<s:form action="flowAction_approve">
+			<s:hidden name="taskId"></s:hidden>
+			<s:hidden name="applicationId"></s:hidden>
+			<s:hidden name="approval" value="true"></s:hidden>
+
+			<div class="ItemBlock_Title1">
+				<!-- 信息说明 -->
+				<div class="ItemBlock_Title1">
+					<img border="0" width="4" height="7"
+						src="${pageContext.request.contextPath}/style/blue/images/item_point.gif" />
+					申请信息
+				</div>
+			</div>
 			<div class="ItemBlockBorder">
 				<div class="ItemBlock">
 					<table cellpadding="0" cellspacing="0" class="mainForm">
 						<tr>
-							<td width="100">上级部门</td>
-							<td><s:select name="parentId"
-									cssClass="SelectStyle required" list="departmentList"
-									listKey="id" listValue="name" headerKey=""
-									headerValue="==请选择部门==">
-								</s:select></td>
-						</tr>
-						<tr>
-							<td>部门名称</td>
-							<td><s:textfield name="name" cssClass="InputStyle required"></s:textfield>
-								*</td>
-						</tr>
-						<tr>
-							<td>职能说明</td>
-							<td><s:textarea name="description"
-									cssClass="TextareaStyle required">
-								</s:textarea></td>
+							<td><a href="javascript:void(0)"
+								style="text-decoration: underline">[点击下载申请的文档]</a></td>
 						</tr>
 					</table>
 				</div>
 			</div>
 
-			<!-- 表单操作 -->
-			<div id="InputDetailBar">
-				<input type="image" src="<%=basePath%>style/images/save.png" /> <a
-					href="javascript:history.go(-1);"><img
-					src="<%=basePath%>style/images/goBack.png" /></a>
+			<div class="ItemBlock_Title1">
+				<!-- 信息说明 -->
+				<div class="ItemBlock_Title1">
+					<img border="0" width="4" height="7"
+						src="${pageContext.request.contextPath}/style/blue/images/item_point.gif" />
+					审批信息
+				</div>
 			</div>
+			<div class="ItemBlockBorder">
+				<div class="ItemBlock">
+					<table cellpadding="0" cellspacing="0" class="mainForm">
+						<tr>
+							<td>审批意见</td>
+							<td><s:textarea name="comment" cssClass="TextareaStyle"
+									cssStyle="width: 500px;"></s:textarea></td>
+						</tr>
+
+						<%-- 当后面的路线只有一条，就不需要显示了 --%>
+						<s:if test="#outcomes.size() > 1">
+							<tr>
+								<td>请选择下一步</td>
+								<td><s:radio name="outcome" list="#outcomes"></s:radio></td>
+							</tr>
+						</s:if>
+					</table>
+				</div>
+			</div>
+
+			<!-- 表单操作 -->
+			<div id="InputDetailBar" style="float: none">
+				<!--onclick事件在submit之前触发-->
+				<input type="image"
+					src="${pageContext.request.contextPath}/style/blue/images/button/agree.png" />
+				<input type="image"
+					onclick="document.forms[0].approval.value='false'"
+					src="${pageContext.request.contextPath}/style/blue/images/button/disagree.png" />
+				<a href="javascript:history.go(-1);"><img
+					src="${pageContext.request.contextPath}/style/images/goBack.png" /></a>
+			</div>
+
 		</s:form>
 	</div>
 
 	<div class="Description">
-		说明：<br /> 1，上级部门的列表是有层次结构的（树形）。<br />
-		2，如果是修改：上级部门列表中不能显示当前修改的部门及其子孙部门。因为不能选择自已或自已的子部门作为上级部门。<br />
+		说明：<br /> 1，同意：本次审批通过，流程继续执行。如果所有的环节都通过，则表单的最终状态为：已通过。<br />
+		2，不同意：本次审批未通过，流程结束，不再继续执行。表单的最终状态为：未通过。<br />
 	</div>
+
+
 
 </body>
 </html>

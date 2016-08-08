@@ -1,17 +1,9 @@
 package com.hyr.oa.model;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
-
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 /**
  * 实体：主帖
@@ -19,12 +11,8 @@ import javax.persistence.TemporalType;
  * @author tyg
  * 
  */
-@Entity
-@Table(name = "hyr_oa_topic")
-public class Topic extends Article
+public class Topic extends Article implements Serializable
 {
-
-	private static final long serialVersionUID = 7866218157961337022L;
 
 	/** 普通帖 */
 	public static final int TYPE_NORMAL = 0;
@@ -75,7 +63,6 @@ public class Topic extends Article
 		this.replyCount = replyCount;
 	}
 
-	@Temporal(TemporalType.TIMESTAMP)
 	public Date getLastUpdateTime()
 	{
 		return lastUpdateTime;
@@ -86,7 +73,6 @@ public class Topic extends Article
 		this.lastUpdateTime = lastUpdateTime;
 	}
 
-	@OneToOne
 	public Reply getLastReply()
 	{
 		return lastReply;
@@ -97,7 +83,6 @@ public class Topic extends Article
 		this.lastReply = lastReply;
 	}
 
-	@ManyToOne
 	public Forum getForum()
 	{
 		return forum;
@@ -108,7 +93,6 @@ public class Topic extends Article
 		this.forum = forum;
 	}
 
-	@OneToMany(mappedBy = "topic")  
 	public Set<Reply> getReplies()
 	{
 		return replies;

@@ -56,7 +56,7 @@
 						<tr height="30">
 							<td class="InputAreaBg" colspan="2" align="center"><input
 								type="image"
-								src="<%=basePath%>style/blue/images/button/submit.PNG"
+								src="<%=basePath%>style/blue/images/button/submit.png"
 								style="margin-right: 15px;" /> <a
 								href="javascript:history.go(-1);"><img
 									src="<%=basePath%>style/blue/images/button/goBack.png" /></a></td>

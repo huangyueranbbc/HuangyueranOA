@@ -12,6 +12,7 @@ import com.hyr.oa.model.Forum;
 import com.hyr.oa.model.PageBean;
 import com.hyr.oa.model.Reply;
 import com.hyr.oa.model.Topic;
+import com.hyr.oa.model.User;
 import com.hyr.oa.service.ReplyService;
 import com.hyr.oa.util.AppException;
 
@@ -23,7 +24,7 @@ import com.hyr.oa.util.AppException;
 @Transactional
 @Service("replyServiceImpl")
 @SuppressWarnings("unchecked")
-public class ReplyServiceImpl extends DaoSupportImpl<Reply>implements ReplyService
+public class ReplyServiceImpl extends DaoSupportImpl<Reply> implements ReplyService
 {
 
 	/**
@@ -76,8 +77,20 @@ public class ReplyServiceImpl extends DaoSupportImpl<Reply>implements ReplyServi
 				.setFirstResult((pageNum - 1) * pageSize).setMaxResults(pageSize).list();
 
 		Long count = (Long) getSession().createQuery("SELECT COUNT(*) FROM Reply r WHERE r.topic=? ").setParameter(0, topic).uniqueResult();
- 
+
 		return new PageBean(pageNum, pageSize, list, count.intValue());
+	}
+
+	/**
+	 * 根据用户ID删除用户所有回复
+	 * 
+	 * @param id
+	 * @throws AppException
+	 */
+	public void deleteReplyByUser(User user) throws AppException
+	{
+		getSession().createQuery("DELETE Reply r WHERE r.author=? ").setParameter(0, user).executeUpdate();
+
 	}
 
 }
